@@ -1,0 +1,6 @@
+scrapy
+beautifulsoup4
+requests
+selenium
+PyYAML
+pytest
