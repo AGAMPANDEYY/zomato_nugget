@@ -15,6 +15,7 @@ import aiohttp
 import asyncio
 from typing import Dict
 import time
+import logging
 
 class EthicalScrapingChecker:
     def __init__(self):

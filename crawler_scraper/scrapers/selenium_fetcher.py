@@ -1,4 +1,6 @@
 
+import logging
+
 async def SeleniumFetcher(url):
     """
     Fetch a webpage using Selenium with rotating user agents and proxies.
@@ -36,4 +38,6 @@ async def SeleniumFetcher(url):
     driver.get(url)
     html = driver.page_source
     driver.quit()
+
+    logging.info(f"Fetched {html} from {url}")
     return html

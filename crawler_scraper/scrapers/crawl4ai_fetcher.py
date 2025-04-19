@@ -17,4 +17,7 @@ class Crawl4AIFetcher:
             res = await crawler.arun(self.url, config=self.crawl_conf)
         if not res.success:
             raise Exception(f"Crawl4AI failed: {res.error_message}")
+        logging.info(f"Crawl4AI response for {self.url}: {res.markdown}")
+
+        # Return the markdown content
         return res.markdown 

@@ -1,0 +1,18 @@
+# Crawling and Scraping Libraries
+scrapy
+beautifulsoup4
+requests
+selenium
+PyYAML
+pytest
+crawl4ai
+scrapy-rotating-proxies
+scrapegraphai
+scrapegraph-py
+
+#scarpped data cleaining
+google-generativeai
+
+# Data Processing Libraries
+pyiceberg[s3fs,hive]
+pyarrow

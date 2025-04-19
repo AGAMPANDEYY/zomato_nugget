@@ -1,18 +1,15 @@
 {
-    "zomato": {
-        "base_url": "https://www.zomato.com"
-    },
-    "swiggy": {
-        "base_url": "https://www.swiggy.com"
+    "swiggy_lucknow_mcdonalds": {
+        "base_url": "https://www.swiggy.com/city/lucknow/mcdonalds-habibullah-estate-road-hazratganj-rest532693"
     }, 
+    "swiggy_roorkee_cookhouse":{
+        "base_url": "https://www.swiggy.com/city/roorkee/the-cook-house-civil-lines-rest320649?restaurant_id=320649&source=collection&query=North%20Indian"
+    },
     "bikanerwala": {
         "base_url": "https://www.bikanervala.com"
     },
     "dominos": {
         "base_url": "https://pizzaonline.dominos.co.in/jfl-discovery-ui/en/web/home/66090?&src=brand"
-    },
-    "kfc": {
-        "base_url": "https://online.kfc.co.in/"
     },
     "mcdonalds": {
         "base_url": "https://mcdindia.com/"
@@ -20,9 +17,6 @@
     "indian_restaurants": {
         "base_url": "https://indiarestaurant.co.in/"
     }, 
-    "tripadvisor": {
-        "base_url": "https://www.tripadvisor.in/Restaurants-g293860-India.html"
-    },
     "sankalprestaurants": {
         "base_url": "https://sankalprestaurants.com/"
     }

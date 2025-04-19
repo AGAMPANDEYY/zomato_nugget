@@ -1,16 +1,16 @@
 
 # router.py
-from crawler.middleware.ethics_check import *
+from crawler_scraper.crawler.middleware.ethics_check import *
 from tenacity import retry, stop_after_attempt, wait_exponential
 from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig, CacheMode
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from scrapegraphai.graphs import SmartScraperGraph
-from scrapers.bs4_fetcher import BS4Fetcher
-from scrapers.selenium_fetcher import SeleniumFetcher
-from scrapers.crawl4ai_fetcher import Crawl4AIFetcher
-from scrapers.scrapegraphai_fetcher import ScrapeGraphAIFetcher
-from cleaner.cleaner import clean_data, normalize
+from crawler_scraper.scrapers.bs4_fetcher import BS4Fetcher
+from crawler_scraper.scrapers.selenium_fetcher import SeleniumFetcher
+from crawler_scraper.scrapers.crawl4ai_fetcher import Crawl4AIFetcher
+from crawler_scraper.scrapers.scrapegraphai_fetcher import ScrapeGraphAIFetcher
+from crawler_scraper.cleaner.cleaner import clean_data, normalize
 import logging
 import asyncio
 # --- Configuration ---
@@ -51,37 +51,66 @@ retry_policy = dict(
 class ScraperRouter:
     def __init__(self):
         self.fetchers = [
-            ScrapeGraphAIFetcher(),
-            SeleniumFetcher(),
-            Crawl4AIFetcher(),
-            BS4Fetcher()
+            ("ScrapeGraphAIFetcher", ScrapeGraphAIFetcher),  # output like a JSON
+             ("SeleniumFetcher", SeleniumFetcher),        # needs normalization
+             ("Crawl4AIFetcher", Crawl4AIFetcher),        #markdown output
+            ("BS4Fetcher", BS4Fetcher)             # needs normalization
         ]
 
     @retry(**retry_policy)
-    async def fetch_content(self, url: str) -> str:
-        for fetcher in self.fetchers:
-            try:
-                logging.debug(f"Attempting {fetcher.__class__.__name__} for {url}")
-                result = fetcher.fetch(url)
-                return await result if asyncio.iscoroutine(result) else result
-            except Exception as e:
-                logging.info(f"{fetcher.__class__.__name__} failed: {e}")
-        raise Exception("All fetchers failed")
+    async def fetch_content(self, url: str) -> tuple[str, str]:
+        combined_scrapped_data = {
+            "ScrapeGraphAIFetcher": [],
+            "SeleniumFetcher": [],
+            "Crawl4AIFetcher": [],
+            "BS4Fetcher": []
+        }
+        for fetcher_name, fetcher in self.fetchers:
+                try:
+                    logging.debug(f"Attempting {fetcher_name} for {url}")
+                    # Call the async fetcher function with the URL
+                    content = await fetcher(url)
+                    combined_scrapped_data[fetcher_name].append((url, content))
 
+                except Exception as e:
+                    logging.info(f"{fetcher_name} failed: {e}")
+        
+        return combined_scrapped_data
+                
 
 async def process_urls(urls):
     router = ScraperRouter()
+    
+    processed_combined_scrapped_data = {
+        "ScrapeGraphAIFetcher": [],
+        "SeleniumFetcher": [],
+        "Crawl4AIFetcher": [],
+        "BS4Fetcher": []
+    }
+
     for url in urls:
-        # Add delay between checks
         await asyncio.sleep(0.1)
-        
+
         if not await is_allowed(url):
             logging.warning(f"Blocked by ethical checks: {url}")
             continue
-            
+
         try:
-            html = await router.fetch_content(url)
-            data = normalize(clean_data(html))
-            # save or index...
+            combined_scrapped_data = await router.fetch_content(url)
+            # Process each fetcher's data
+            for fetcher_name, fetched_data in combined_scrapped_data.items():
+                for fetched_url, content in fetched_data:
+                    # Only normalize for specific fetchers
+                    if fetcher_name in ["SeleniumFetcher", "BS4Fetcher"]:
+                        data = normalize(clean_data(content, fetcher_name))
+                    else:
+                        data = clean_data(content, fetcher_name)
+
+                    processed_combined_scrapped_data[fetcher_name].append((fetched_url,data))
+                    logging.info(f"Scraped {fetched_url} using {fetcher_name}")
+        
         except Exception as e:
             logging.error(f"Failed {url}: {e}")
+            continue
+        
+    return processed_combined_scrapped_data    

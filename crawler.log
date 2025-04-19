@@ -1,0 +1,83 @@
+2025-04-20 03:49:40,808 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 03:49:40,810 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 03:49:56,845 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 03:49:56,851 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 03:49:56,852 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 03:49:56,852 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 03:49:58,328 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/pages/little-india-singapore: [402] Insufficient credits
+2025-04-20 03:50:10,164 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E4175355+78597]
+	GetHandleVerifier [0x00007FF7E41753B0+78688]
+	(No symbol) [0x00007FF7E3F291AA]
+	(No symbol) [0x00007FF7E3F25BA0]
+	(No symbol) [0x00007FF7E3F16849]
+	(No symbol) [0x00007FF7E3F185A8]
+	(No symbol) [0x00007FF7E3F16B56]
+	(No symbol) [0x00007FF7E3F165D6]
+	(No symbol) [0x00007FF7E3F1629A]
+	(No symbol) [0x00007FF7E3F13F4A]
+	(No symbol) [0x00007FF7E3F1471C]
+	(No symbol) [0x00007FF7E3F2D07A]
+	(No symbol) [0x00007FF7E3FD002E]
+	(No symbol) [0x00007FF7E3FA70EA]
+	(No symbol) [0x00007FF7E3FCF2BB]
+	(No symbol) [0x00007FF7E3FA6EC3]
+	(No symbol) [0x00007FF7E3F703F8]
+	(No symbol) [0x00007FF7E3F71163]
+	GetHandleVerifier [0x00007FF7E441EF0D+2870973]
+	GetHandleVerifier [0x00007FF7E44196B8+2848360]
+	GetHandleVerifier [0x00007FF7E4436993+2967875]
+	GetHandleVerifier [0x00007FF7E419019A+188746]
+	GetHandleVerifier [0x00007FF7E419847F+222255]
+	GetHandleVerifier [0x00007FF7E417D2D4+111236]
+	GetHandleVerifier [0x00007FF7E417D482+111666]
+	GetHandleVerifier [0x00007FF7E41635A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 03:50:10,237 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 03:50:10,527 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /pages/little-india-singapore (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002E514C5DE50>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 03:50:10,528 - root - INFO - Scraped https://www.bikanervala.com/pages/little-india-singapore using ScrapeGraphAIFetcher
+2025-04-20 03:50:11,711 - root - ERROR - ScrapeGraphAI failed for https://indiarestaurant.co.in/about.html: [402] Insufficient credits
+2025-04-20 03:50:21,705 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E4175355+78597]
+	GetHandleVerifier [0x00007FF7E41753B0+78688]
+	(No symbol) [0x00007FF7E3F291AA]
+	(No symbol) [0x00007FF7E3F25BA0]
+	(No symbol) [0x00007FF7E3F16849]
+	(No symbol) [0x00007FF7E3F185A8]
+	(No symbol) [0x00007FF7E3F16B56]
+	(No symbol) [0x00007FF7E3F165D6]
+	(No symbol) [0x00007FF7E3F1629A]
+	(No symbol) [0x00007FF7E3F13F4A]
+	(No symbol) [0x00007FF7E3F1471C]
+	(No symbol) [0x00007FF7E3F2D07A]
+	(No symbol) [0x00007FF7E3FD002E]
+	(No symbol) [0x00007FF7E3FA70EA]
+	(No symbol) [0x00007FF7E3FCF2BB]
+	(No symbol) [0x00007FF7E3FA6EC3]
+	(No symbol) [0x00007FF7E3F703F8]
+	(No symbol) [0x00007FF7E3F71163]
+	GetHandleVerifier [0x00007FF7E441EF0D+2870973]
+	GetHandleVerifier [0x00007FF7E44196B8+2848360]
+	GetHandleVerifier [0x00007FF7E4436993+2967875]
+	GetHandleVerifier [0x00007FF7E419019A+188746]
+	GetHandleVerifier [0x00007FF7E419847F+222255]
+	GetHandleVerifier [0x00007FF7E417D2D4+111236]
+	GetHandleVerifier [0x00007FF7E417D482+111666]
+	GetHandleVerifier [0x00007FF7E41635A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 03:50:21,706 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 03:50:21,990 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='indiarestaurant.co.in', port=443): Max retries exceeded with url: /about.html (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002E514C5F9D0>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 03:50:21,991 - root - INFO - Scraped https://indiarestaurant.co.in/about.html using ScrapeGraphAIFetcher
+2025-04-20 03:50:29,510 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/pages/biratnagar: [402] Insufficient credits
+2025-04-20 03:50:35,030 - root - INFO - SeleniumFetcher failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-04-20 03:50:35,031 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 03:50:35,529 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /pages/biratnagar (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002E514C5F110>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 03:50:35,529 - root - INFO - Scraped https://www.bikanervala.com/pages/biratnagar using ScrapeGraphAIFetcher

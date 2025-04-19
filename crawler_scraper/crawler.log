@@ -1,2 +1,2009 @@
 2025-04-19 17:43:45,444 - root - INFO - Starting the web crawler pipeline...
 2025-04-19 17:43:45,448 - root - INFO - Loaded 9 seed URLs.
+2025-04-19 17:53:45,983 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 17:53:45,984 - root - INFO - Loaded 9 seed URLs.
+2025-04-19 21:05:38,050 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 21:05:38,051 - root - INFO - Loaded 9 seed URLs.
+2025-04-19 21:20:27,178 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 21:20:27,180 - root - INFO - Loaded 9 seed URLs.
+2025-04-19 21:20:39,568 - root - INFO - Crawl4AI found 949 URLs.
+2025-04-19 21:20:39,578 - scrapy.addons - INFO - Enabled addons:
+[]
+2025-04-19 21:20:39,594 - scrapy.extensions.telnet - INFO - Telnet Password: 617541f1bf244e25
+2025-04-19 21:20:39,834 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2025-04-19 21:20:39,835 - scrapy.crawler - INFO - Overridden settings:
+{'ROBOTSTXT_OBEY': True, 'USER_AGENT': 'MyRAGBot/1.0'}
+2025-04-19 21:20:40,194 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-04-19 21:20:40,206 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-04-19 21:20:40,206 - scrapy.middleware - INFO - Enabled item pipelines:
+[]
+2025-04-19 21:20:40,207 - scrapy.core.engine - INFO - Spider opened
+2025-04-19 21:20:40,230 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:20:40,233 - scrapy.extensions.telnet - INFO - Telnet console listening on 127.0.0.1:6023
+2025-04-19 21:20:41,535 - scrapy.spidermiddlewares.httperror - INFO - Ignoring response <403 https://www.tripadvisor.in/Restaurants-g293860-India.html>: HTTP status code is not handled or not allowed
+2025-04-19 21:21:40,235 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 16 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:22:40,240 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:23:40,243 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:24:40,238 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:25:40,233 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:26:40,234 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:26:40,446 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://www.zomato.com/robots.txt> (failed 3 times): User timeout caused connection failure: Getting https://www.zomato.com/robots.txt took longer than 180.0 seconds..
+2025-04-19 21:26:40,456 - scrapy.downloadermiddlewares.robotstxt - ERROR - Error downloading <GET https://www.zomato.com/robots.txt>: User timeout caused connection failure: Getting https://www.zomato.com/robots.txt took longer than 180.0 seconds..
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 1088, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        current.result, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 449, in _cb_timeout
+    raise TimeoutError(f"Getting {url} took longer than {timeout} seconds.")
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.zomato.com/robots.txt took longer than 180.0 seconds..
+2025-04-19 21:26:40,882 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://www.zomato.com> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 21:26:41,004 - scrapy.core.scraper - ERROR - Error downloading <GET https://www.zomato.com>
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 21:27:40,242 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:56:05,714 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 21:56:05,717 - root - INFO - Loaded 9 seed URLs.
+2025-04-19 21:56:20,345 - root - INFO - Crawl4AI found 948 URLs.
+2025-04-19 21:56:20,362 - scrapy.addons - INFO - Enabled addons:
+[]
+2025-04-19 21:56:20,374 - scrapy.extensions.telnet - INFO - Telnet Password: d00190db86f32daa
+2025-04-19 21:56:20,456 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2025-04-19 21:56:20,457 - scrapy.crawler - INFO - Overridden settings:
+{'ROBOTSTXT_OBEY': True, 'USER_AGENT': 'MyRAGBot/1.0'}
+2025-04-19 21:56:20,683 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-04-19 21:56:20,694 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-04-19 21:56:20,694 - scrapy.middleware - INFO - Enabled item pipelines:
+[]
+2025-04-19 21:56:20,694 - scrapy.core.engine - INFO - Spider opened
+2025-04-19 21:56:20,710 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:56:20,711 - scrapy.extensions.telnet - INFO - Telnet console listening on 127.0.0.1:6023
+2025-04-19 21:56:21,682 - scrapy.spidermiddlewares.httperror - INFO - Ignoring response <403 https://www.tripadvisor.in/Restaurants-g293860-India.html>: HTTP status code is not handled or not allowed
+2025-04-19 21:57:20,718 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 16 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:58:20,718 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:59:20,714 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 21:59:21,068 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://www.zomato.com/robots.txt> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 21:59:21,069 - scrapy.downloadermiddlewares.robotstxt - ERROR - Error downloading <GET https://www.zomato.com/robots.txt>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 22:00:20,716 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:01:20,718 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:02:20,724 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:02:20,975 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://online.kfc.co.in/robots.txt> (failed 3 times): User timeout caused connection failure: Getting https://online.kfc.co.in/robots.txt took longer than 180.0 seconds..
+2025-04-19 22:02:20,976 - scrapy.downloadermiddlewares.robotstxt - ERROR - Error downloading <GET https://online.kfc.co.in/robots.txt>: User timeout caused connection failure: Getting https://online.kfc.co.in/robots.txt took longer than 180.0 seconds..
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 1088, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        current.result, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 449, in _cb_timeout
+    raise TimeoutError(f"Getting {url} took longer than {timeout} seconds.")
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://online.kfc.co.in/robots.txt took longer than 180.0 seconds..
+2025-04-19 22:03:20,723 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:04:20,724 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:05:20,711 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:06:20,719 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:07:20,713 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:08:20,720 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:08:21,109 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://www.zomato.com> (failed 3 times): User timeout caused connection failure: Getting https://www.zomato.com took longer than 180.0 seconds..
+2025-04-19 22:08:21,155 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://online.kfc.co.in/> (failed 3 times): User timeout caused connection failure: Getting https://online.kfc.co.in/ took longer than 180.0 seconds..
+2025-04-19 22:08:21,223 - scrapy.core.scraper - ERROR - Error downloading <GET https://www.zomato.com>
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 1088, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        current.result, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 449, in _cb_timeout
+    raise TimeoutError(f"Getting {url} took longer than {timeout} seconds.")
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.zomato.com took longer than 180.0 seconds..
+2025-04-19 22:08:21,265 - scrapy.core.scraper - ERROR - Error downloading <GET https://online.kfc.co.in/>
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 1088, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        current.result, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 449, in _cb_timeout
+    raise TimeoutError(f"Getting {url} took longer than {timeout} seconds.")
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://online.kfc.co.in/ took longer than 180.0 seconds..
+2025-04-19 22:08:21,378 - scrapy.core.engine - INFO - Closing spider (finished)
+2025-04-19 22:08:21,405 - scrapy.statscollectors - INFO - Dumping Scrapy stats:
+{'downloader/exception_count': 12,
+ 'downloader/exception_type_count/twisted.internet.error.TimeoutError': 8,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 4,
+ 'downloader/request_bytes': 9059,
+ 'downloader/request_count': 30,
+ 'downloader/request_method_count/GET': 30,
+ 'downloader/response_bytes': 572001,
+ 'downloader/response_count': 18,
+ 'downloader/response_status_count/200': 14,
+ 'downloader/response_status_count/301': 2,
+ 'downloader/response_status_count/403': 1,
+ 'downloader/response_status_count/404': 1,
+ 'dupefilter/filtered': 15,
+ 'elapsed_time_seconds': 720.680697,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2025, 4, 19, 16, 38, 21, 391019, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1907347,
+ 'httpcompression/response_count': 12,
+ 'httperror/response_ignored_count': 1,
+ 'httperror/response_ignored_status_count/403': 1,
+ 'items_per_minute': None,
+ 'log_count/ERROR': 8,
+ 'log_count/INFO': 23,
+ 'request_depth_max': 2,
+ 'response_received_count': 16,
+ 'responses_per_minute': None,
+ 'retry/count': 8,
+ 'retry/max_reached': 4,
+ 'retry/reason_count/twisted.internet.error.TimeoutError': 5,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 3,
+ "robotstxt/exception_count/<class 'twisted.internet.error.TimeoutError'>": 1,
+ "robotstxt/exception_count/<class 'twisted.web._newclient.ResponseNeverReceived'>": 1,
+ 'robotstxt/request_count': 10,
+ 'robotstxt/response_count': 8,
+ 'robotstxt/response_status_count/200': 7,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 15,
+ 'scheduler/dequeued/memory': 15,
+ 'scheduler/enqueued': 15,
+ 'scheduler/enqueued/memory': 15,
+ 'start_time': datetime.datetime(2025, 4, 19, 16, 26, 20, 710322, tzinfo=datetime.timezone.utc)}
+2025-04-19 22:08:21,407 - scrapy.core.engine - INFO - Spider closed (finished)
+2025-04-19 22:17:59,525 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 22:17:59,527 - root - INFO - Loaded 9 seed URLs.
+2025-04-19 22:20:12,300 - root - INFO - Crawl4AI found 951 URLs.
+2025-04-19 22:20:12,312 - scrapy.addons - INFO - Enabled addons:
+[]
+2025-04-19 22:20:12,326 - scrapy.extensions.telnet - INFO - Telnet Password: 5119c1358f46dbd5
+2025-04-19 22:20:12,359 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2025-04-19 22:20:12,360 - scrapy.crawler - INFO - Overridden settings:
+{'ROBOTSTXT_OBEY': True, 'USER_AGENT': 'MyRAGBot/1.0'}
+2025-04-19 22:20:12,489 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-04-19 22:20:12,496 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-04-19 22:20:12,497 - scrapy.middleware - INFO - Enabled item pipelines:
+[]
+2025-04-19 22:20:12,497 - scrapy.core.engine - INFO - Spider opened
+2025-04-19 22:20:12,512 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:20:12,514 - scrapy.extensions.telnet - INFO - Telnet console listening on 127.0.0.1:6023
+2025-04-19 22:20:13,515 - scrapy.spidermiddlewares.httperror - INFO - Ignoring response <403 https://www.tripadvisor.in/Restaurants-g293860-India.html>: HTTP status code is not handled or not allowed
+2025-04-19 22:21:12,525 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 16 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:22:12,518 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:23:12,526 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:24:12,521 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:25:12,517 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:26:12,517 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:26:12,916 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://online.kfc.co.in/robots.txt> (failed 3 times): User timeout caused connection failure: Getting https://online.kfc.co.in/robots.txt took longer than 180.0 seconds..
+2025-04-19 22:26:12,935 - scrapy.downloadermiddlewares.robotstxt - ERROR - Error downloading <GET https://online.kfc.co.in/robots.txt>: User timeout caused connection failure: Getting https://online.kfc.co.in/robots.txt took longer than 180.0 seconds..
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 1088, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        current.result, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 449, in _cb_timeout
+    raise TimeoutError(f"Getting {url} took longer than {timeout} seconds.")
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://online.kfc.co.in/robots.txt took longer than 180.0 seconds..
+2025-04-19 22:27:12,518 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:28:12,527 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:29:12,521 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:29:12,569 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://www.zomato.com/robots.txt> (failed 3 times): User timeout caused connection failure: Getting https://www.zomato.com/robots.txt took longer than 180.0 seconds..
+2025-04-19 22:29:12,570 - scrapy.downloadermiddlewares.robotstxt - ERROR - Error downloading <GET https://www.zomato.com/robots.txt>: User timeout caused connection failure: Getting https://www.zomato.com/robots.txt took longer than 180.0 seconds..
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 1088, in _runCallbacks
+    current.result = callback(  # type: ignore[misc]
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+        current.result, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\handlers\http11.py", line 449, in _cb_timeout
+    raise TimeoutError(f"Getting {url} took longer than {timeout} seconds.")
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://www.zomato.com/robots.txt took longer than 180.0 seconds..
+2025-04-19 22:30:12,520 - scrapy.extensions.logstats - INFO - Crawled 16 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:31:41,407 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 22:31:41,411 - root - INFO - Loaded 8 seed URLs.
+2025-04-19 22:31:56,149 - root - INFO - Crawl4AI found 225 URLs.
+2025-04-19 22:31:56,160 - scrapy.addons - INFO - Enabled addons:
+[]
+2025-04-19 22:31:56,174 - scrapy.extensions.telnet - INFO - Telnet Password: c96cb36c093c5f22
+2025-04-19 22:31:56,215 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2025-04-19 22:31:56,216 - scrapy.crawler - INFO - Overridden settings:
+{'ROBOTSTXT_OBEY': True, 'USER_AGENT': 'MyRAGBot/1.0'}
+2025-04-19 22:31:56,374 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-04-19 22:31:56,382 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-04-19 22:31:56,382 - scrapy.middleware - INFO - Enabled item pipelines:
+[]
+2025-04-19 22:31:56,382 - scrapy.core.engine - INFO - Spider opened
+2025-04-19 22:31:56,398 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 22:31:56,400 - scrapy.extensions.telnet - INFO - Telnet console listening on 127.0.0.1:6023
+2025-04-19 22:31:57,265 - scrapy.spidermiddlewares.httperror - INFO - Ignoring response <403 https://www.tripadvisor.in/Restaurants-g293860-India.html>: HTTP status code is not handled or not allowed
+2025-04-19 22:32:00,468 - scrapy.core.engine - INFO - Closing spider (finished)
+2025-04-19 22:32:00,469 - scrapy.statscollectors - INFO - Dumping Scrapy stats:
+{'downloader/request_bytes': 6989,
+ 'downloader/request_count': 19,
+ 'downloader/request_method_count/GET': 19,
+ 'downloader/response_bytes': 467495,
+ 'downloader/response_count': 19,
+ 'downloader/response_status_count/200': 15,
+ 'downloader/response_status_count/301': 2,
+ 'downloader/response_status_count/403': 1,
+ 'downloader/response_status_count/404': 1,
+ 'dupefilter/filtered': 15,
+ 'elapsed_time_seconds': 4.070604,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2025, 4, 19, 17, 2, 0, 468786, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1454844,
+ 'httpcompression/response_count': 13,
+ 'httperror/response_ignored_count': 1,
+ 'httperror/response_ignored_status_count/403': 1,
+ 'items_per_minute': None,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 2,
+ 'response_received_count': 17,
+ 'responses_per_minute': None,
+ 'robotstxt/request_count': 8,
+ 'robotstxt/response_count': 8,
+ 'robotstxt/response_status_count/200': 7,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 10,
+ 'scheduler/dequeued/memory': 10,
+ 'scheduler/enqueued': 10,
+ 'scheduler/enqueued/memory': 10,
+ 'start_time': datetime.datetime(2025, 4, 19, 17, 1, 56, 398182, tzinfo=datetime.timezone.utc)}
+2025-04-19 22:32:00,469 - scrapy.core.engine - INFO - Spider closed (finished)
+2025-04-19 22:49:09,789 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 22:49:09,792 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 22:51:42,767 - root - INFO - Crawl4AI found 158 URLs.
+2025-04-19 22:52:59,081 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 22:52:59,083 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 22:53:07,198 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-19 22:57:31,801 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 22:57:31,802 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 22:57:44,471 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-19 23:03:54,302 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:03:54,304 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:03:54,425 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<Connection.run() done, defined at C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\playwright\_impl\_connection.py:272> exception=NotImplementedError()>
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\playwright\_impl\_connection.py", line 279, in run
+    await self._transport.connect()
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\playwright\_impl\_transport.py", line 133, in connect
+    raise exc
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\playwright\_impl\_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Python313\Lib\asyncio\subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\base_events.py", line 1794, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\base_events.py", line 539, in _make_subprocess_transport
+    raise NotImplementedError
+NotImplementedError
+2025-04-19 23:05:17,313 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:05:17,314 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:05:17,411 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<Connection.run() done, defined at C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\playwright\_impl\_connection.py:272> exception=NotImplementedError()>
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\playwright\_impl\_connection.py", line 279, in run
+    await self._transport.connect()
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\playwright\_impl\_transport.py", line 133, in connect
+    raise exc
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\playwright\_impl\_transport.py", line 120, in connect
+    self._proc = await asyncio.create_subprocess_exec(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\Python313\Lib\asyncio\subprocess.py", line 224, in create_subprocess_exec
+    transport, protocol = await loop.subprocess_exec(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        stderr=stderr, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\base_events.py", line 1794, in subprocess_exec
+    transport = await self._make_subprocess_transport(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        protocol, popen_args, False, stdin, stdout, stderr,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        bufsize, **kwargs)
+        ^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\base_events.py", line 539, in _make_subprocess_transport
+    raise NotImplementedError
+NotImplementedError
+2025-04-19 23:07:03,044 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:07:03,046 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:07:12,625 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-19 23:08:07,158 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:08:07,159 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:08:16,243 - root - INFO - Crawl4AI found 186 URLs.
+2025-04-19 23:08:16,252 - scrapy.addons - INFO - Enabled addons:
+[]
+2025-04-19 23:08:16,268 - scrapy.extensions.telnet - INFO - Telnet Password: 9ef6610fa710d859
+2025-04-19 23:08:16,305 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2025-04-19 23:08:16,305 - scrapy.crawler - INFO - Overridden settings:
+{'ROBOTSTXT_OBEY': True, 'USER_AGENT': 'Scrapy'}
+2025-04-19 23:08:16,482 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-04-19 23:08:16,494 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-04-19 23:08:16,495 - scrapy.middleware - INFO - Enabled item pipelines:
+[]
+2025-04-19 23:08:16,496 - scrapy.core.engine - INFO - Spider opened
+2025-04-19 23:08:16,516 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 23:08:16,518 - scrapy.extensions.telnet - INFO - Telnet console listening on 127.0.0.1:6023
+2025-04-19 23:08:17,078 - scrapy.spidermiddlewares.httperror - INFO - Ignoring response <403 https://www.swiggy.com/city/lucknow/mcdonalds-habibullah-estate-road-hazratganj-rest532693>: HTTP status code is not handled or not allowed
+2025-04-19 23:08:17,164 - scrapy.spidermiddlewares.httperror - INFO - Ignoring response <403 https://mcdindia.com/>: HTTP status code is not handled or not allowed
+2025-04-19 23:08:17,165 - scrapy.spidermiddlewares.httperror - INFO - Ignoring response <403 https://www.swiggy.com/city/roorkee/the-cook-house-civil-lines-rest320649?restaurant_id=320649&source=collection&query=North%20Indian>: HTTP status code is not handled or not allowed
+2025-04-19 23:08:18,158 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://indiarestaurant.co.in/robots.txt> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 23:08:18,159 - scrapy.downloadermiddlewares.robotstxt - ERROR - Error downloading <GET https://indiarestaurant.co.in/robots.txt>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 23:08:20,312 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://indiarestaurant.co.in/> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 23:08:20,414 - scrapy.core.scraper - ERROR - Error downloading <GET https://indiarestaurant.co.in/>
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 23:09:16,524 - scrapy.extensions.logstats - INFO - Crawled 10 pages (at 10 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 23:09:36,577 - scrapy.core.engine - INFO - Closing spider (finished)
+2025-04-19 23:09:36,579 - scrapy.statscollectors - INFO - Dumping Scrapy stats:
+{'downloader/exception_count': 8,
+ 'downloader/exception_type_count/twisted.internet.error.TCPTimedOutError': 1,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 7,
+ 'downloader/request_bytes': 6922,
+ 'downloader/request_count': 23,
+ 'downloader/request_method_count/GET': 23,
+ 'downloader/response_bytes': 333424,
+ 'downloader/response_count': 15,
+ 'downloader/response_status_count/200': 8,
+ 'downloader/response_status_count/301': 2,
+ 'downloader/response_status_count/403': 4,
+ 'downloader/response_status_count/404': 1,
+ 'dupefilter/filtered': 15,
+ 'elapsed_time_seconds': 80.062299,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2025, 4, 19, 17, 39, 36, 578379, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 636266,
+ 'httpcompression/response_count': 10,
+ 'httperror/response_ignored_count': 3,
+ 'httperror/response_ignored_status_count/403': 3,
+ 'items_per_minute': None,
+ 'log_count/ERROR': 4,
+ 'log_count/INFO': 14,
+ 'request_depth_max': 2,
+ 'response_received_count': 13,
+ 'responses_per_minute': None,
+ 'retry/count': 6,
+ 'retry/max_reached': 2,
+ 'retry/reason_count/twisted.internet.error.TCPTimedOutError': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseNeverReceived': 5,
+ "robotstxt/exception_count/<class 'twisted.web._newclient.ResponseNeverReceived'>": 1,
+ 'robotstxt/request_count': 7,
+ 'robotstxt/response_count': 6,
+ 'robotstxt/response_status_count/200': 4,
+ 'robotstxt/response_status_count/403': 1,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 11,
+ 'scheduler/dequeued/memory': 11,
+ 'scheduler/enqueued': 11,
+ 'scheduler/enqueued/memory': 11,
+ 'start_time': datetime.datetime(2025, 4, 19, 17, 38, 16, 516080, tzinfo=datetime.timezone.utc)}
+2025-04-19 23:09:36,580 - scrapy.core.engine - INFO - Spider closed (finished)
+2025-04-19 23:15:28,712 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:15:28,730 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:15:43,955 - root - INFO - Crawl4AI found 158 URLs.
+2025-04-19 23:15:43,972 - scrapy.addons - INFO - Enabled addons:
+[]
+2025-04-19 23:15:43,987 - scrapy.extensions.telnet - INFO - Telnet Password: e6326ce9f9fb6de9
+2025-04-19 23:15:44,076 - scrapy.middleware - INFO - Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2025-04-19 23:15:44,077 - scrapy.crawler - INFO - Overridden settings:
+{'ROBOTSTXT_OBEY': True,
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/115.0 Safari/537.36'}
+2025-04-19 23:15:44,336 - scrapy.middleware - INFO - Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2025-04-19 23:15:44,346 - scrapy.middleware - INFO - Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2025-04-19 23:15:44,347 - scrapy.middleware - INFO - Enabled item pipelines:
+[]
+2025-04-19 23:15:44,347 - scrapy.core.engine - INFO - Spider opened
+2025-04-19 23:15:44,369 - scrapy.extensions.logstats - INFO - Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 23:15:44,371 - scrapy.extensions.telnet - INFO - Telnet console listening on 127.0.0.1:6023
+2025-04-19 23:16:44,370 - scrapy.extensions.logstats - INFO - Crawled 12 pages (at 12 pages/min), scraped 0 items (at 0 items/min)
+2025-04-19 23:16:52,832 - scrapy.downloadermiddlewares.retry - ERROR - Gave up retrying <GET https://sankalprestaurants.com/robots.txt> (failed 3 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 23:16:52,833 - scrapy.downloadermiddlewares.robotstxt - ERROR - Error downloading <GET https://sankalprestaurants.com/robots.txt>: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+Traceback (most recent call last):
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\internet\defer.py", line 2013, in _inlineCallbacks
+    result = context.run(
+        cast(Failure, result).throwExceptionIntoGenerator, gen
+    )
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\twisted\python\failure.py", line 467, in throwExceptionIntoGenerator
+    return g.throw(self.value.with_traceback(self.tb))
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Agam\Work\zomato_nugget\venv_zomato\Lib\site-packages\scrapy\core\downloader\middleware.py", line 68, in process_request
+    return (yield download_func(request, spider))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+twisted.web._newclient.ResponseNeverReceived: [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>]
+2025-04-19 23:16:57,869 - scrapy.core.engine - INFO - Closing spider (finished)
+2025-04-19 23:16:57,871 - scrapy.statscollectors - INFO - Dumping Scrapy stats:
+{'downloader/exception_count': 3,
+ 'downloader/exception_type_count/twisted.internet.error.TCPTimedOutError': 2,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseNeverReceived': 1,
+ 'downloader/request_bytes': 8025,
+ 'downloader/request_count': 19,
+ 'downloader/request_method_count/GET': 19,
+ 'downloader/response_bytes': 455447,
+ 'downloader/response_count': 16,
+ 'downloader/response_status_count/200': 13,
+ 'downloader/response_status_count/301': 2,
+ 'downloader/response_status_count/404': 1,
+ 'dupefilter/filtered': 15,
+ 'elapsed_time_seconds': 73.501806,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2025, 4, 19, 17, 46, 57, 870489, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 1428323,
+ 'httpcompression/response_count': 12,
+ 'items_per_minute': None,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 11,
+ 'request_depth_max': 2,
+ 'response_received_count': 14,
+ 'responses_per_minute': None,
+ 'retry/count': 2,
+ 'retry/max_reached': 1,
+ 'retry/reason_count/twisted.internet.error.TCPTimedOutError': 2,
+ "robotstxt/exception_count/<class 'twisted.web._newclient.ResponseNeverReceived'>": 1,
+ 'robotstxt/request_count': 7,
+ 'robotstxt/response_count': 6,
+ 'robotstxt/response_status_count/200': 5,
+ 'robotstxt/response_status_count/404': 1,
+ 'scheduler/dequeued': 9,
+ 'scheduler/dequeued/memory': 9,
+ 'scheduler/enqueued': 9,
+ 'scheduler/enqueued/memory': 9,
+ 'start_time': datetime.datetime(2025, 4, 19, 17, 45, 44, 368683, tzinfo=datetime.timezone.utc)}
+2025-04-19 23:16:57,872 - scrapy.core.engine - INFO - Spider closed (finished)
+2025-04-19 23:18:44,624 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:18:44,626 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:18:56,340 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-19 23:22:28,105 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:22:28,107 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:23:15,636 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-19 23:23:15,644 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-19 23:23:15,645 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-19 23:23:15,645 - root - INFO - Starting scraping of discovered URLs...
+2025-04-19 23:32:51,067 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:32:51,072 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:33:00,891 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-19 23:33:00,896 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-19 23:33:00,897 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-19 23:33:00,897 - root - INFO - Starting scraping of discovered URLs...
+2025-04-19 23:33:01,915 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:01,916 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:01,916 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:01,917 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:02,919 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:02,919 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:02,920 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:02,921 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:04,925 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:04,926 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:04,926 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:04,926 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:08,935 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:08,936 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:08,936 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:08,937 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:16,950 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:16,952 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:16,953 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:16,953 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:16,954 - root - ERROR - Failed https://www.bikanervala.com/products/tikoni-mathi: RetryError[<Future at 0x204382068b0 state=finished raised Exception>]
+2025-04-19 23:33:17,523 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:17,523 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:17,524 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:17,524 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:18,526 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:18,526 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:18,527 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:18,527 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:20,533 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:20,534 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:20,534 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:20,534 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:24,536 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:24,536 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:24,537 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:24,537 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:32,544 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:32,545 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:32,546 - root - INFO - type failed: 'str' object has no attribute 'url'
+2025-04-19 23:33:32,546 - root - INFO - function failed: 'function' object has no attribute 'fetch'
+2025-04-19 23:33:32,547 - root - ERROR - Failed https://www.bikanervala.com/pages/al-barsha: RetryError[<Future at 0x20438459450 state=finished raised Exception>]
+2025-04-19 23:37:51,050 - root - INFO - Starting the web crawler pipeline...
+2025-04-19 23:37:51,052 - root - INFO - Loaded 7 seed URLs.
+2025-04-19 23:39:10,133 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-19 23:39:10,138 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-19 23:39:10,138 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-19 23:39:10,139 - root - INFO - Starting scraping of discovered URLs...
+2025-04-19 23:39:12,689 - root - ERROR - Failed https://www.bikanervala.com/pages/east-bin-hamila: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:04,579 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:00:04,581 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:00:14,425 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:00:14,431 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:00:14,431 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:00:14,431 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:00:16,995 - root - ERROR - Failed https://www.bikanervala.com/collections/tapri-tales: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:18,522 - root - ERROR - Failed https://www.bikanervala.com/pages/mount-roskill: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:20,128 - root - ERROR - Failed https://www.bikanervala.com/products/plain-basmati-rice-250g-pack-of-2: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:21,803 - root - ERROR - Failed https://www.bikanervala.com/collections/tapri-tales-combos: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:23,248 - root - ERROR - Failed https://www.bikanervala.com/products/bikano-gol-matthi: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:24,738 - root - ERROR - Failed https://www.bikanervala.com/products/kadi-pakoda-300-gms-rte-pack-of-2: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:26,355 - root - ERROR - Failed https://www.bikanervala.com/products/all-time-mixture: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:27,416 - root - ERROR - Failed https://www.swiggy.com/city/roorkee/the-cook-house-civil-lines-rest320649?restaurant_id=320649&source=collection&query=North%20Indian: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:28,835 - root - ERROR - Failed https://www.bikanervala.com/products/bikano-mini-samosa: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:00:30,374 - root - ERROR - Failed https://www.bikanervala.com/collections/tin-sweets: clean_data() missing 1 required positional argument: 'scraper_type'
+2025-04-20 00:02:11,563 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:02:11,565 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:02:22,306 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:02:22,315 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:02:22,316 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:02:22,316 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:02:26,175 - root - INFO - Scraped data: None
+2025-04-20 00:02:26,175 - root - INFO - Scraping complete.
+2025-04-20 00:11:02,610 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:11:02,612 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:11:10,434 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:11:10,440 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:11:10,440 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:11:10,440 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:11:12,519 - root - INFO - Scraped data: None
+2025-04-20 00:11:12,519 - root - INFO - Scraping complete.
+2025-04-20 00:12:34,404 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:12:34,406 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:12:44,081 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:12:44,086 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:12:44,086 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:12:44,087 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:12:45,252 - root - INFO - Blocked by robots.txt: https://sankalprestaurants.com/wp-content/uploads/2023/08/DSC01580-scaled.jpg
+2025-04-20 00:12:45,252 - root - WARNING - Blocked by ethical checks: https://sankalprestaurants.com/wp-content/uploads/2023/08/DSC01580-scaled.jpg
+2025-04-20 00:12:47,452 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/collections/cookies-combo: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:12:47,453 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:00,302 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:13:00,303 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:13:00,596 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /collections/cookies-combo (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157EA0130E0>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:13:02,298 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/collections/cookies-combo: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:02,298 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:12,149 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:13:12,150 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:13:12,444 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /collections/cookies-combo (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157E9FAB390>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:13:15,144 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/collections/cookies-combo: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:15,144 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:24,995 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:13:24,996 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:13:25,283 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /collections/cookies-combo (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157EA051310>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:13:29,961 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/collections/cookies-combo: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:29,961 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:39,876 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:13:39,876 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:13:40,233 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /collections/cookies-combo (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157E9FABED0>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:13:48,924 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/collections/cookies-combo: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:48,925 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:13:58,739 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:13:58,740 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:13:59,010 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /collections/cookies-combo (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157EA051810>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:13:59,011 - root - ERROR - Failed https://www.bikanervala.com/collections/cookies-combo: RetryError[<Future at 0x157ea07d220 state=finished raised Exception>]
+2025-04-20 00:14:00,556 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/pages/ithari: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:14:00,557 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:14:10,799 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:14:10,800 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:14:11,085 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /pages/ithari (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157EA052990>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:14:12,881 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/pages/ithari: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:14:12,881 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:14:23,236 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:14:23,238 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:14:23,533 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /pages/ithari (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157EA0525D0>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:14:46,132 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/pages/ithari: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:14:46,133 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:14:55,855 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:14:55,856 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:14:56,141 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /pages/ithari (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157E94BB250>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:15:00,804 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/pages/ithari: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:15:00,804 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:15:10,421 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E0615355+78597]
+	GetHandleVerifier [0x00007FF6E06153B0+78688]
+	(No symbol) [0x00007FF6E03C91AA]
+	(No symbol) [0x00007FF6E03C5BA0]
+	(No symbol) [0x00007FF6E03B6849]
+	(No symbol) [0x00007FF6E03B85A8]
+	(No symbol) [0x00007FF6E03B6B56]
+	(No symbol) [0x00007FF6E03B65D6]
+	(No symbol) [0x00007FF6E03B629A]
+	(No symbol) [0x00007FF6E03B3F4A]
+	(No symbol) [0x00007FF6E03B471C]
+	(No symbol) [0x00007FF6E03CD07A]
+	(No symbol) [0x00007FF6E047002E]
+	(No symbol) [0x00007FF6E04470EA]
+	(No symbol) [0x00007FF6E046F2BB]
+	(No symbol) [0x00007FF6E0446EC3]
+	(No symbol) [0x00007FF6E04103F8]
+	(No symbol) [0x00007FF6E0411163]
+	GetHandleVerifier [0x00007FF6E08BEF0D+2870973]
+	GetHandleVerifier [0x00007FF6E08B96B8+2848360]
+	GetHandleVerifier [0x00007FF6E08D6993+2967875]
+	GetHandleVerifier [0x00007FF6E063019A+188746]
+	GetHandleVerifier [0x00007FF6E063847F+222255]
+	GetHandleVerifier [0x00007FF6E061D2D4+111236]
+	GetHandleVerifier [0x00007FF6E061D482+111666]
+	GetHandleVerifier [0x00007FF6E06035A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:15:10,421 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:15:10,781 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /pages/ithari (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157E94BB4D0>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:15:19,461 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/pages/ithari: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:15:19,462 - root - INFO - ScrapeGraphAIFetcher failed: asyncio.run() cannot be called from a running event loop
+2025-04-20 00:15:26,645 - root - INFO - SeleniumFetcher failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-04-20 00:15:26,646 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:15:26,951 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /pages/ithari (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000157E9FAB890>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:15:26,953 - root - ERROR - Failed https://www.bikanervala.com/pages/ithari: RetryError[<Future at 0x157ea231f50 state=finished raised Exception>]
+2025-04-20 00:16:06,384 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:16:06,385 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:16:14,139 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:16:14,144 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:16:14,145 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:16:14,145 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:31:43,363 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:31:43,365 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:31:51,031 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:31:51,037 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:31:51,038 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:31:51,038 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:31:51,626 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/soan-papdi: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:31:51,627 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:32:01,854 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF772CA5355+78597]
+	GetHandleVerifier [0x00007FF772CA53B0+78688]
+	(No symbol) [0x00007FF772A591AA]
+	(No symbol) [0x00007FF772A55BA0]
+	(No symbol) [0x00007FF772A46849]
+	(No symbol) [0x00007FF772A485A8]
+	(No symbol) [0x00007FF772A46B56]
+	(No symbol) [0x00007FF772A465D6]
+	(No symbol) [0x00007FF772A4629A]
+	(No symbol) [0x00007FF772A43F4A]
+	(No symbol) [0x00007FF772A4471C]
+	(No symbol) [0x00007FF772A5D07A]
+	(No symbol) [0x00007FF772B0002E]
+	(No symbol) [0x00007FF772AD70EA]
+	(No symbol) [0x00007FF772AFF2BB]
+	(No symbol) [0x00007FF772AD6EC3]
+	(No symbol) [0x00007FF772AA03F8]
+	(No symbol) [0x00007FF772AA1163]
+	GetHandleVerifier [0x00007FF772F4EF0D+2870973]
+	GetHandleVerifier [0x00007FF772F496B8+2848360]
+	GetHandleVerifier [0x00007FF772F66993+2967875]
+	GetHandleVerifier [0x00007FF772CC019A+188746]
+	GetHandleVerifier [0x00007FF772CC847F+222255]
+	GetHandleVerifier [0x00007FF772CAD2D4+111236]
+	GetHandleVerifier [0x00007FF772CAD482+111666]
+	GetHandleVerifier [0x00007FF772C935A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:32:01,862 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:32:02,154 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/soan-papdi (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192C98B7E00>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:32:03,160 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/soan-papdi: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:32:03,161 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:32:12,906 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF772CA5355+78597]
+	GetHandleVerifier [0x00007FF772CA53B0+78688]
+	(No symbol) [0x00007FF772A591AA]
+	(No symbol) [0x00007FF772A55BA0]
+	(No symbol) [0x00007FF772A46849]
+	(No symbol) [0x00007FF772A485A8]
+	(No symbol) [0x00007FF772A46B56]
+	(No symbol) [0x00007FF772A465D6]
+	(No symbol) [0x00007FF772A4629A]
+	(No symbol) [0x00007FF772A43F4A]
+	(No symbol) [0x00007FF772A4471C]
+	(No symbol) [0x00007FF772A5D07A]
+	(No symbol) [0x00007FF772B0002E]
+	(No symbol) [0x00007FF772AD70EA]
+	(No symbol) [0x00007FF772AFF2BB]
+	(No symbol) [0x00007FF772AD6EC3]
+	(No symbol) [0x00007FF772AA03F8]
+	(No symbol) [0x00007FF772AA1163]
+	GetHandleVerifier [0x00007FF772F4EF0D+2870973]
+	GetHandleVerifier [0x00007FF772F496B8+2848360]
+	GetHandleVerifier [0x00007FF772F66993+2967875]
+	GetHandleVerifier [0x00007FF772CC019A+188746]
+	GetHandleVerifier [0x00007FF772CC847F+222255]
+	GetHandleVerifier [0x00007FF772CAD2D4+111236]
+	GetHandleVerifier [0x00007FF772CAD482+111666]
+	GetHandleVerifier [0x00007FF772C935A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:32:12,907 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:32:12,949 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/soan-papdi (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192C9A57D90>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:32:14,962 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/soan-papdi: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:32:14,963 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:32:24,614 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF772CA5355+78597]
+	GetHandleVerifier [0x00007FF772CA53B0+78688]
+	(No symbol) [0x00007FF772A591AA]
+	(No symbol) [0x00007FF772A55BA0]
+	(No symbol) [0x00007FF772A46849]
+	(No symbol) [0x00007FF772A485A8]
+	(No symbol) [0x00007FF772A46B56]
+	(No symbol) [0x00007FF772A465D6]
+	(No symbol) [0x00007FF772A4629A]
+	(No symbol) [0x00007FF772A43F4A]
+	(No symbol) [0x00007FF772A4471C]
+	(No symbol) [0x00007FF772A5D07A]
+	(No symbol) [0x00007FF772B0002E]
+	(No symbol) [0x00007FF772AD70EA]
+	(No symbol) [0x00007FF772AFF2BB]
+	(No symbol) [0x00007FF772AD6EC3]
+	(No symbol) [0x00007FF772AA03F8]
+	(No symbol) [0x00007FF772AA1163]
+	GetHandleVerifier [0x00007FF772F4EF0D+2870973]
+	GetHandleVerifier [0x00007FF772F496B8+2848360]
+	GetHandleVerifier [0x00007FF772F66993+2967875]
+	GetHandleVerifier [0x00007FF772CC019A+188746]
+	GetHandleVerifier [0x00007FF772CC847F+222255]
+	GetHandleVerifier [0x00007FF772CAD2D4+111236]
+	GetHandleVerifier [0x00007FF772CAD482+111666]
+	GetHandleVerifier [0x00007FF772C935A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:32:24,615 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:32:24,901 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/soan-papdi (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192CA6096D0>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:32:28,909 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/soan-papdi: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:32:28,910 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:32:38,539 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF772CA5355+78597]
+	GetHandleVerifier [0x00007FF772CA53B0+78688]
+	(No symbol) [0x00007FF772A591AA]
+	(No symbol) [0x00007FF772A55BA0]
+	(No symbol) [0x00007FF772A46849]
+	(No symbol) [0x00007FF772A485A8]
+	(No symbol) [0x00007FF772A46B56]
+	(No symbol) [0x00007FF772A465D6]
+	(No symbol) [0x00007FF772A4629A]
+	(No symbol) [0x00007FF772A43F4A]
+	(No symbol) [0x00007FF772A4471C]
+	(No symbol) [0x00007FF772A5D07A]
+	(No symbol) [0x00007FF772B0002E]
+	(No symbol) [0x00007FF772AD70EA]
+	(No symbol) [0x00007FF772AFF2BB]
+	(No symbol) [0x00007FF772AD6EC3]
+	(No symbol) [0x00007FF772AA03F8]
+	(No symbol) [0x00007FF772AA1163]
+	GetHandleVerifier [0x00007FF772F4EF0D+2870973]
+	GetHandleVerifier [0x00007FF772F496B8+2848360]
+	GetHandleVerifier [0x00007FF772F66993+2967875]
+	GetHandleVerifier [0x00007FF772CC019A+188746]
+	GetHandleVerifier [0x00007FF772CC847F+222255]
+	GetHandleVerifier [0x00007FF772CAD2D4+111236]
+	GetHandleVerifier [0x00007FF772CAD482+111666]
+	GetHandleVerifier [0x00007FF772C935A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:32:38,539 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:32:38,648 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/soan-papdi (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192C9A560D0>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:32:46,661 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/soan-papdi: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:32:46,662 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:07,198 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF772CA5355+78597]
+	GetHandleVerifier [0x00007FF772CA53B0+78688]
+	(No symbol) [0x00007FF772A591AA]
+	(No symbol) [0x00007FF772A55BA0]
+	(No symbol) [0x00007FF772A46849]
+	(No symbol) [0x00007FF772A485A8]
+	(No symbol) [0x00007FF772A46B56]
+	(No symbol) [0x00007FF772A465D6]
+	(No symbol) [0x00007FF772A4629A]
+	(No symbol) [0x00007FF772A43F4A]
+	(No symbol) [0x00007FF772A4471C]
+	(No symbol) [0x00007FF772A5D07A]
+	(No symbol) [0x00007FF772B0002E]
+	(No symbol) [0x00007FF772AD70EA]
+	(No symbol) [0x00007FF772AFF2BB]
+	(No symbol) [0x00007FF772AD6EC3]
+	(No symbol) [0x00007FF772AA03F8]
+	(No symbol) [0x00007FF772AA1163]
+	GetHandleVerifier [0x00007FF772F4EF0D+2870973]
+	GetHandleVerifier [0x00007FF772F496B8+2848360]
+	GetHandleVerifier [0x00007FF772F66993+2967875]
+	GetHandleVerifier [0x00007FF772CC019A+188746]
+	GetHandleVerifier [0x00007FF772CC847F+222255]
+	GetHandleVerifier [0x00007FF772CAD2D4+111236]
+	GetHandleVerifier [0x00007FF772CAD482+111666]
+	GetHandleVerifier [0x00007FF772C935A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:33:07,199 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:33:07,318 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/soan-papdi (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192C96D7D90>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:33:07,319 - root - ERROR - Failed https://www.bikanervala.com/products/soan-papdi: RetryError[<Future at 0x192c98bcb00 state=finished raised Exception>]
+2025-04-20 00:33:07,760 - root - ERROR - ScrapeGraphAI failed for https://bikanervala.com/pages/singapore: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:07,760 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:17,377 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF772CA5355+78597]
+	GetHandleVerifier [0x00007FF772CA53B0+78688]
+	(No symbol) [0x00007FF772A591AA]
+	(No symbol) [0x00007FF772A55BA0]
+	(No symbol) [0x00007FF772A46849]
+	(No symbol) [0x00007FF772A485A8]
+	(No symbol) [0x00007FF772A46B56]
+	(No symbol) [0x00007FF772A465D6]
+	(No symbol) [0x00007FF772A4629A]
+	(No symbol) [0x00007FF772A43F4A]
+	(No symbol) [0x00007FF772A4471C]
+	(No symbol) [0x00007FF772A5D07A]
+	(No symbol) [0x00007FF772B0002E]
+	(No symbol) [0x00007FF772AD70EA]
+	(No symbol) [0x00007FF772AFF2BB]
+	(No symbol) [0x00007FF772AD6EC3]
+	(No symbol) [0x00007FF772AA03F8]
+	(No symbol) [0x00007FF772AA1163]
+	GetHandleVerifier [0x00007FF772F4EF0D+2870973]
+	GetHandleVerifier [0x00007FF772F496B8+2848360]
+	GetHandleVerifier [0x00007FF772F66993+2967875]
+	GetHandleVerifier [0x00007FF772CC019A+188746]
+	GetHandleVerifier [0x00007FF772CC847F+222255]
+	GetHandleVerifier [0x00007FF772CAD2D4+111236]
+	GetHandleVerifier [0x00007FF772CAD482+111666]
+	GetHandleVerifier [0x00007FF772C935A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:33:17,377 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:33:17,484 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='bikanervala.com', port=443): Max retries exceeded with url: /pages/singapore (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192C9A55BD0>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:33:18,487 - root - ERROR - ScrapeGraphAI failed for https://bikanervala.com/pages/singapore: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:18,488 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:28,125 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF772CA5355+78597]
+	GetHandleVerifier [0x00007FF772CA53B0+78688]
+	(No symbol) [0x00007FF772A591AA]
+	(No symbol) [0x00007FF772A55BA0]
+	(No symbol) [0x00007FF772A46849]
+	(No symbol) [0x00007FF772A485A8]
+	(No symbol) [0x00007FF772A46B56]
+	(No symbol) [0x00007FF772A465D6]
+	(No symbol) [0x00007FF772A4629A]
+	(No symbol) [0x00007FF772A43F4A]
+	(No symbol) [0x00007FF772A4471C]
+	(No symbol) [0x00007FF772A5D07A]
+	(No symbol) [0x00007FF772B0002E]
+	(No symbol) [0x00007FF772AD70EA]
+	(No symbol) [0x00007FF772AFF2BB]
+	(No symbol) [0x00007FF772AD6EC3]
+	(No symbol) [0x00007FF772AA03F8]
+	(No symbol) [0x00007FF772AA1163]
+	GetHandleVerifier [0x00007FF772F4EF0D+2870973]
+	GetHandleVerifier [0x00007FF772F496B8+2848360]
+	GetHandleVerifier [0x00007FF772F66993+2967875]
+	GetHandleVerifier [0x00007FF772CC019A+188746]
+	GetHandleVerifier [0x00007FF772CC847F+222255]
+	GetHandleVerifier [0x00007FF772CAD2D4+111236]
+	GetHandleVerifier [0x00007FF772CAD482+111666]
+	GetHandleVerifier [0x00007FF772C935A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:33:28,125 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:33:28,164 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='bikanervala.com', port=443): Max retries exceeded with url: /pages/singapore (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192C9A57890>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:33:30,180 - root - ERROR - ScrapeGraphAI failed for https://bikanervala.com/pages/singapore: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:30,180 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:40,887 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF772CA5355+78597]
+	GetHandleVerifier [0x00007FF772CA53B0+78688]
+	(No symbol) [0x00007FF772A591AA]
+	(No symbol) [0x00007FF772A55BA0]
+	(No symbol) [0x00007FF772A46849]
+	(No symbol) [0x00007FF772A485A8]
+	(No symbol) [0x00007FF772A46B56]
+	(No symbol) [0x00007FF772A465D6]
+	(No symbol) [0x00007FF772A4629A]
+	(No symbol) [0x00007FF772A43F4A]
+	(No symbol) [0x00007FF772A4471C]
+	(No symbol) [0x00007FF772A5D07A]
+	(No symbol) [0x00007FF772B0002E]
+	(No symbol) [0x00007FF772AD70EA]
+	(No symbol) [0x00007FF772AFF2BB]
+	(No symbol) [0x00007FF772AD6EC3]
+	(No symbol) [0x00007FF772AA03F8]
+	(No symbol) [0x00007FF772AA1163]
+	GetHandleVerifier [0x00007FF772F4EF0D+2870973]
+	GetHandleVerifier [0x00007FF772F496B8+2848360]
+	GetHandleVerifier [0x00007FF772F66993+2967875]
+	GetHandleVerifier [0x00007FF772CC019A+188746]
+	GetHandleVerifier [0x00007FF772CC847F+222255]
+	GetHandleVerifier [0x00007FF772CAD2D4+111236]
+	GetHandleVerifier [0x00007FF772CAD482+111666]
+	GetHandleVerifier [0x00007FF772C935A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:33:40,888 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:33:40,926 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='bikanervala.com', port=443): Max retries exceeded with url: /pages/singapore (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192C9A560D0>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:33:44,928 - root - ERROR - ScrapeGraphAI failed for https://bikanervala.com/pages/singapore: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:44,929 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:33:48,947 - root - INFO - SeleniumFetcher failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-04-20 00:33:48,949 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:33:49,060 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='bikanervala.com', port=443): Max retries exceeded with url: /pages/singapore (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000192C9A57C50>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:34:58,937 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:34:58,939 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:35:08,157 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:35:08,162 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:35:08,162 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:35:08,162 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:35:08,913 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/karela-mathi: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:35:08,913 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:35:11,795 - root - INFO - SeleniumFetcher failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-04-20 00:35:11,812 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:35:11,926 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/karela-mathi (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001D28EB48C20>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:36:14,950 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:36:14,952 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:36:23,932 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:36:23,937 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:36:23,938 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:36:23,939 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:36:24,538 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/crunchy-munchy-90g: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:36:24,539 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:36:32,007 - root - INFO - SeleniumFetcher failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-04-20 00:36:32,027 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:36:32,071 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/crunchy-munchy-90g (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000220BC7452B0>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:37:09,286 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:37:09,287 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:37:16,663 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:37:16,668 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:37:16,669 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:37:16,669 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:37:17,836 - root - INFO - Blocked by robots.txt: https://sankalprestaurants.com/wp-content/uploads/2023/08/Kurma-Bhaji-WIth-Malabar-Paratha-scaled.jpg
+2025-04-20 00:37:17,837 - root - WARNING - Blocked by ethical checks: https://sankalprestaurants.com/wp-content/uploads/2023/08/Kurma-Bhaji-WIth-Malabar-Paratha-scaled.jpg
+2025-04-20 00:37:18,365 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/chatax-sticks: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:37:18,366 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:37:28,246 - root - INFO - SeleniumFetcher failed: Message: unknown error: net::ERR_PROXY_CONNECTION_FAILED
+  (Session info: chrome=135.0.7049.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BEF5355+78597]
+	GetHandleVerifier [0x00007FF76BEF53B0+78688]
+	(No symbol) [0x00007FF76BCA91AA]
+	(No symbol) [0x00007FF76BCA5BA0]
+	(No symbol) [0x00007FF76BC96849]
+	(No symbol) [0x00007FF76BC985A8]
+	(No symbol) [0x00007FF76BC96B56]
+	(No symbol) [0x00007FF76BC965D6]
+	(No symbol) [0x00007FF76BC9629A]
+	(No symbol) [0x00007FF76BC93F4A]
+	(No symbol) [0x00007FF76BC9471C]
+	(No symbol) [0x00007FF76BCAD07A]
+	(No symbol) [0x00007FF76BD5002E]
+	(No symbol) [0x00007FF76BD270EA]
+	(No symbol) [0x00007FF76BD4F2BB]
+	(No symbol) [0x00007FF76BD26EC3]
+	(No symbol) [0x00007FF76BCF03F8]
+	(No symbol) [0x00007FF76BCF1163]
+	GetHandleVerifier [0x00007FF76C19EF0D+2870973]
+	GetHandleVerifier [0x00007FF76C1996B8+2848360]
+	GetHandleVerifier [0x00007FF76C1B6993+2967875]
+	GetHandleVerifier [0x00007FF76BF1019A+188746]
+	GetHandleVerifier [0x00007FF76BF1847F+222255]
+	GetHandleVerifier [0x00007FF76BEFD2D4+111236]
+	GetHandleVerifier [0x00007FF76BEFD482+111666]
+	GetHandleVerifier [0x00007FF76BEE35A9+5465]
+	BaseThreadInitThunk [0x00007FFC427DE8D7+23]
+	RtlUserThreadStart [0x00007FFC4425BF6C+44]
+
+2025-04-20 00:37:28,261 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:37:28,322 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/chatax-sticks (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001768A138050>: Failed to resolve 'proxy1.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:37:29,336 - root - ERROR - ScrapeGraphAI failed for https://www.bikanervala.com/products/chatax-sticks: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:37:29,337 - root - INFO - ScrapeGraphAIFetcher failed: SGAI_API_KEY not provided and not found in environment
+2025-04-20 00:37:31,422 - root - INFO - SeleniumFetcher failed: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-04-20 00:37:31,423 - root - INFO - Crawl4AIFetcher failed: __init__() should return None, not 'coroutine'
+2025-04-20 00:37:31,799 - root - INFO - BS4Fetcher failed: HTTPSConnectionPool(host='www.bikanervala.com', port=443): Max retries exceeded with url: /products/chatax-sticks (Caused by ProxyError('Unable to connect to proxy', NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001768A135590>: Failed to resolve 'proxy2.example.com' ([Errno 11001] getaddrinfo failed)")))
+2025-04-20 00:38:17,430 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:38:17,432 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:38:25,867 - root - INFO - Crawl4AI found 186 URLs.
+2025-04-20 00:38:25,873 - root - INFO - Wrote 186 URLs to crawled_urls.json.
+2025-04-20 00:38:25,873 - root - INFO - Discovered 186 URLs, saved to output file.
+2025-04-20 00:38:25,874 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:38:35,762 - root - INFO - Scraped data: {
+    "website_info": {
+        "name": "Bikanervala",
+        "contact_info": {
+            "address": "A-28, Lawrence Road Industrial Area, Keshav Puram, Shakurpur, New Delhi, Delhi,110035",
+            "email": "customercare@bikanervala.com",
+            "phone_numbers": [
+                "+919650075931",
+                "+91-11-47006735"
+            ],
+            "working_hours": "Mon to Sat, 10 AM To 6 PM"
+        },
+        "social_media": {
+            "facebook": "https://www.facebook.com/bikanervala.in/",
+            "twitter": "https://twitter.com/BikanervalaIN",
+            "instagram": "https://www.instagram.com/bikanervala.in/",
+            "linkedin": "https://www.linkedin.com/company/bikanervala-foods-pvt--ltd-/",
+            "youtube": "https://www.youtube.com/@bikanervalafoods"
+        }
+    },
+    "product_info": {
+        "product_name": "Khoya Kesar Peda (Freshly Packed) (1 kg)",
+        "price": 1000.0,
+        "description": "Delicious Sweet made with milk solids, and garnished with pistachio and saffron",
+        "weight": "1 kg",
+        "availability": "Available Now!"
+    },
+    "promotions": {
+        "discount": "Flat \u20b9100 Off on (fresh sweets)1499 + Free Delivery on \u20b91000 Across India.",
+        "orders_dispatch": "Orders will be dispatched within 24 working hours."
+    },
+    "categories": [
+        "Fresh Sweets",
+        "Packed Sweets",
+        "Namkeen",
+        "Bikano",
+        "Our Restaurants",
+        "Catalogue"
+    ],
+    "products": [
+        "Khoya Kesar Peda (Freshly Packed) (1 kg)"
+    ]
+}
+2025-04-20 00:38:35,764 - root - INFO - Scraping complete.
+2025-04-20 00:43:57,257 - root - INFO - Starting the web crawler pipeline...
+2025-04-20 00:43:57,258 - root - INFO - Loaded 7 seed URLs.
+2025-04-20 00:44:05,944 - root - INFO - Crawl4AI found 187 URLs.
+2025-04-20 00:44:05,949 - root - INFO - Wrote 187 URLs to crawled_urls.json.
+2025-04-20 00:44:05,949 - root - INFO - Discovered 187 URLs, saved to output file.
+2025-04-20 00:44:05,949 - root - INFO - Starting scraping of discovered URLs...
+2025-04-20 00:44:06,539 - root - INFO - Blocked by robots.txt: https://www.bikanervala.com/cart
+2025-04-20 00:44:06,540 - root - WARNING - Blocked by ethical checks: https://www.bikanervala.com/cart
+2025-04-20 00:44:16,058 - root - INFO - ScrapeGraphAI response for https://www.bikanervala.com/products/matar-para: {
+    "business_name": "Bikanervala",
+    "address": "A-28, Lawrence Road Industrial Area, Keshav Puram, Shakurpur, New Delhi, Delhi, 110035",
+    "contact_number": [
+        "+91 9650075931",
+        "+91-11-47006735"
+    ],
+    "email": "customercare@bikanervala.com",
+    "working_hours": {
+        "days": "Mon to Sat",
+        "hours": "10 AM to 6 PM"
+    },
+    "social_media": {
+        "facebook": "https://www.facebook.com/bikanervala.in/",
+        "twitter": "https://twitter.com/BikanervalaIN",
+        "instagram": "https://www.instagram.com/bikanervala.in/",
+        "linkedin": "https://www.linkedin.com/company/bikanervala-foods-pvt--ltd-/",
+        "youtube": "https://www.youtube.com/@bikanervalafoods"
+    },
+    "products": [
+        {
+            "name": "Matar Para",
+            "price": 120,
+            "weight": "400 g",
+            "discount": 0
+        }
+    ],
+    "offers": [
+        {
+            "description": "Flat \u20b9100 Off on (fresh sweets) \u20b91499 + Free Delivery on \u20b91000 Across India."
+        }
+    ],
+    "shipping_policy": {
+        "dispatch_time": "24 working hours"
+    },
+    "categories": [
+        "Fresh Sweets",
+        "Packed Sweets",
+        "Namkeen",
+        "Bikano",
+        "Bakery",
+        "Ready To Eat Food",
+        "Snacks",
+        "Beverages"
+    ]
+}
+2025-04-20 00:44:16,059 - root - INFO - Scraped https://www.bikanervala.com/products/matar-para using ScrapeGraphAIFetcher
+2025-04-20 00:44:26,596 - root - INFO - ScrapeGraphAI response for https://www.bikanervala.com/pages/biratnagar: {
+    "storeTimings": "8 AM - 9 PM",
+    "address": "Near, Main Rd (North), Biratnagar 56613, Nepal",
+    "phoneNumber": "+97721512445",
+    "deliveryOptions": [
+        "Dine In",
+        "Takeaway",
+        "Delivery"
+    ],
+    "countries": [
+        "India",
+        "Nepal",
+        "UAE",
+        "USA",
+        "Singapore",
+        "New Zealand",
+        "Canada",
+        "Qatar",
+        "Bahrain"
+    ],
+    "cities": {
+        "India": [
+            "Ahmedabad",
+            "Chennai",
+            "Delhi",
+            "Ghaziabad",
+            "Gurugram",
+            "Hyderabad",
+            "Jaipur",
+            "Lucknow",
+            "Noida"
+        ],
+        "Nepal": [
+            "Baluwatar",
+            "Battisputali",
+            "Biratnagar",
+            "Boudha",
+            "Ithari"
+        ],
+        "UAE": [
+            "Al Barsha",
+            "Al Maryah Island",
+            "Duja Tower",
+            "East Bin Hamila",
+            "Gold SouK",
+            "The Wings Podium"
+        ],
+        "USA": [
+            "Iselin",
+            "Jersey City",
+            "Kansas",
+            "Kendall Park"
+        ],
+        "Singapore": [
+            "Changi",
+            "Katong",
+            "Little India"
+        ],
+        "New Zealand": [
+            "Henderson",
+            "Mount Roskill",
+            "Sydenham"
+        ],
+        "Canada": [
+            "Brampton"
+        ],
+        "Qatar": [
+            "Doha"
+        ],
+        "Bahrain": [
+            "Manama"
+        ]
+    },
+    "contactInformation": {
+        "email": "customercare@bikanervala.com",
+        "phoneNumbers": [
+            "+91-9650075931",
+            "+91-11-47006735"
+        ],
+        "workingDays": "Mon to Sat",
+        "workingHours": "10 AM To 6 PM"
+    },
+    "offers": {
+        "discount": "Flat \u20b9100 Off on (fresh sweets) \u20b91499 + Free Delivery on \u20b91000 Across India",
+        "deliveryTime": "Orders will be dispatched within 24 working hours"
+    }
+}
+2025-04-20 00:44:26,597 - root - INFO - Scraped https://www.bikanervala.com/pages/biratnagar using ScrapeGraphAIFetcher
+2025-04-20 00:44:39,800 - root - INFO - ScrapeGraphAI response for https://www.bikanervala.com/pages/iselin-usa: {
+    "store_information": {
+        "address": "1538 Oak Tree Rd, Iselin, NJ 08830, United States",
+        "store_timing": "11 am - 10 pm",
+        "phone_number": "+18482052673"
+    },
+    "contact_information": {
+        "email": "customercare@bikanervala.com",
+        "phone_numbers": [
+            "+91 9650075931",
+            "+91-11-47006735"
+        ],
+        "working_days": "Mon to Sat",
+        "working_hours": "10 AM To 6 PM"
+    },
+    "social_media_links": {
+        "facebook": "https://www.facebook.com/bikanervala.in/",
+        "twitter": "https://twitter.com/BikanervalaIN",
+        "instagram": "https://www.instagram.com/bikanervala.in/",
+        "linkedin": "https://www.linkedin.com/company/bikanervala-foods-pvt--ltd-/",
+        "youtube": "https://www.youtube.com/@bikanervalafoods"
+    },
+    "shipping_policy": {
+        "dispatch_time": "24 working hours",
+        "free_delivery": "\u20b91000 Across India"
+    },
+    "offers": {
+        "discount": "Flat \u20b9100 Off on (fresh sweets) \u20b91499"
+    },
+    "categories": [
+        "Fresh Sweets",
+        "Packed Sweets",
+        "Namkeen",
+        "Bikano",
+        "Bakery",
+        "Ready To Eat Food",
+        "Snacks",
+        "Beverages"
+    ],
+    "sub_categories": {
+        "Namkeen": [
+            "Bhujia & Sev",
+            "Nuts & Dals",
+            "Mixture",
+            "Boondi"
+        ],
+        "Sweets": [
+            "Tin Sweets",
+            "Soan papdi",
+            "Laddu",
+            "Petha"
+        ],
+        "Bakery": [
+            "Cookies",
+            "Cake Rusk",
+            "Cookies Combo"
+        ],
+        "Ready To Eat Food": [
+            "Gravies",
+            "Ready To Eat Rice",
+            "Ready To Eat Paneer"
+        ],
+        "Snacks": [
+            "Chips",
+            "Crunchy Munchy",
+            "Chatax Sticks",
+            "Matthi",
+            "Rusk"
+        ]
+    }
+}
+2025-04-20 00:44:39,801 - root - INFO - Scraped https://www.bikanervala.com/pages/iselin-usa using ScrapeGraphAIFetcher
+2025-04-20 00:44:40,982 - root - INFO - Blocked by robots.txt: https://sankalprestaurants.com/wp-content/uploads/2023/08/Idli-Vada-scaled.jpg
+2025-04-20 00:44:40,983 - root - WARNING - Blocked by ethical checks: https://sankalprestaurants.com/wp-content/uploads/2023/08/Idli-Vada-scaled.jpg
+2025-04-20 00:44:57,534 - root - INFO - ScrapeGraphAI response for https://www.bikanervala.com/pages/delhi: {
+    "outlet_details": [
+        {
+            "location": "Dwarka",
+            "address": "Plot No.10, Block A, Sector12, Dwarka, New Delhi, Delhi110075",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Dwarka_Delhi_1_480x480.png?v=1718793401"
+        },
+        {
+            "location": "Rohini",
+            "address": "Rohini West Metro Station, Sector10, Rohini, Delhi110085, India",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Rohini_Delhi_1_480x480.png?v=1718793330"
+        },
+        {
+            "location": "Janakpuri",
+            "address": "Lal Sain Mandir Marg, C-2 Block, Janakpuri, New Delhi,110058, India",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T164807.801_480x480.png?v=1718795885"
+        },
+        {
+            "location": "Rajouri Garden",
+            "address": "Near Metro Station, Rajouri Garden, New Delhi, Delhi110027",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T164843.542_480x480.png?v=1718795119"
+        },
+        {
+            "location": "Punjabi Bagh",
+            "address": "Punjabi Bagh, Extention, New Delhi, Delhi110026, India",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T170155.976_480x480.png?v=1718796669"
+        },
+        {
+            "location": "Pitampura",
+            "address": "PP City Centre, Road No.44 Pitampura, New Delhi-110034",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T172320.606_480x480.png?v=1718797951"
+        },
+        {
+            "location": "Kirti Nagar",
+            "address": "Furniture Market, Kirti Nagar Industrial Area, Kirti Nagar, Delhi110015",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T172252.403_480x480.png?v=1718800188"
+        },
+        {
+            "location": "Kamla Nagar",
+            "address": "Maharaja Agarsen Marg, Kamla Nagar, New Delhi, Delhi,110007",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Kamla_nagr_delhi_480x480.png?v=1718955048"
+        },
+        {
+            "location": "Vasant Kunj",
+            "address": "Ambience Mall Vasant Kunj, New Delhi-110070",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Vasant_Kunj_Delhi_480x480.png?v=1718800513"
+        },
+        {
+            "location": "Chanakyapuri",
+            "address": "Chanakyapuri, New Delhi, Delhi110021, India",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T181032.379_480x480.png?v=1718800782"
+        },
+        {
+            "location": "Saket",
+            "address": "PVR Anupam Saket, Community Center, Ashok Vihar, New Delhi,110017",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Saket_Delhi_480x480.png?v=1718800836"
+        },
+        {
+            "location": "Karol Bagh",
+            "address": "Bikanervala Chowk, Arya Samaj Rd, Karol Bagh, Delhi110005",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Karol_bagh_a6523f13-11a5-4251-94f4-1240db88a891_480x480.png?v=1718800879"
+        },
+        {
+            "location": "Dilshad Garden",
+            "address": "Dilshad Garden, Next To HP Petrol Pump, Delhi110095",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Dilshad_garden_3f111c38-3855-4e25-97c4-a89ebd3b8ac2_480x480.png?v=1718800927"
+        },
+        {
+            "location": "Connaught Place",
+            "address": "Handicraft Bhavan, Connaught Place, New Delhi-110001",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T181716.072_480x480.png?v=1718801184"
+        },
+        {
+            "location": "Chandni Chowk",
+            "address": "Kucha Seth Rd, Gachi Chandni Chowk, Delhi110006",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Chandni_Chowk_e2a9ef89-3fda-4bb4-8785-842007973d07_480x480.png?v=1718802021"
+        },
+        {
+            "location": "East of Kailash",
+            "address": "Shop No.1, East of Kailash, New Delhi, Delhi110065",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/East_of_Kailash_Delhi_480x480.png?v=1718802056"
+        },
+        {
+            "location": "Defence Colony",
+            "address": "Near Bharat patrol pump, New Delhi110024",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Defence_Colonoy_Delhi_480x480.png?v=1718802182"
+        },
+        {
+            "location": "Lajpat Nagar",
+            "address": "Lajpat Nagar-II, Lajpat Nagar, , New Delhi-110024",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Lajpat_nagar_be32ec51-71ed-492a-8dcc-8f6903783a11_480x480.png?v=1718802082"
+        },
+        {
+            "location": "GK-2",
+            "address": "GK-II Savitri Cinema Main Road, New Delhi,110048",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/GK_2_DELHI_480x480.png?v=1718802209"
+        },
+        {
+            "location": "GT Karnal Road",
+            "address": "GT Karnal Rd, Gujranwala Town, Delhi,110009",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/GTK_GT_Karnal_Road_18841fe3-ff08-453d-8f00-e1e4469cd399_480x480.png?v=1718802256"
+        },
+        {
+            "location": "Nehru Place",
+            "address": "Epicuria Food & Entertainment HUB, Metro Station, Nehru Place, Delhi110019",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Nehru_place_metrostation_480x480.png?v=1718802300"
+        },
+        {
+            "location": "Krishna Nagar",
+            "address": "Shop No. C-54 and56, East Krishna Nagar, Krishna Nagar, New Delhi, Delhi,110051",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Krishna_Nagar_1343eba5-df8c-4715-a8cc-5b307687788d_480x480.png?v=1718955778"
+        },
+        {
+            "location": "Mayur Vihar",
+            "address": "Shop No.10&11, Extention Metro Station, District Center, Mayur Vihar, Delhi,110091",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Nehru_place_metrostation_fa88e83a-ef6f-419b-b8f7-9b3db2370f15_480x480.png?v=1718802423"
+        },
+        {
+            "location": "Shahdara",
+            "address": "B-39, West Jyoti Nagar, Jyoti Nagar East, Jyoti Nagar, Shahdara, Delhi,110094, India",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/sahibabad_gaziabad_480x480.png?v=1718802468"
+        },
+        {
+            "location": "Preet Vihar",
+            "address": "30, Aditya Arcade, Preet Vihar New Delhi-110092",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T182846.053_480x480.png?v=1718801876"
+        },
+        {
+            "location": "Karol Bagh",
+            "address": "Karol Bagh, New Delhi, Delhi110005, India110005",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Karol_bagh_87d79675-7534-4877-be10-c957d2c7ed9e_480x480.png?v=1718801951"
+        },
+        {
+            "location": "RK Ashram Marg",
+            "address": "RK Ashram Marg, Bharat Nagar, Paharganj, New Delhi, Delhi110055",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/RK_Ashram_marg_af04c597-705b-4927-a35f-bf358809ce3b_480x480.png?v=1718801675"
+        },
+        {
+            "location": "Rohini Sector 3",
+            "address": "Shree Aggarsain International Hospital, Rohini, New Delhi,110086",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Rohini_sec3_480x480.png?v=1718795448"
+        },
+        {
+            "location": "Okhla",
+            "address": "D-159, Salvonic Technologies Metro Station Nsic Okhla, Kalkaji, New Delhi, Delhi110020",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Untitled_design_-_2024-06-19T183950.658_480x480.png?v=1718802541"
+        },
+        {
+            "location": "Aerocity",
+            "address": "Shop No.2 LGF, Worldmark1, Aerocity, Mahipalpur, Delhi110037",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Airocity_Delhi_480x480.png?v=1718793666"
+        },
+        {
+            "location": "ITL Twin Tower",
+            "address": "Shop No.01 ITL Twin Tower, Netaji Subhash Place, Pitampura, New Delhi, Delhi110034",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/ITL_WIN_Tower_480x480.png?v=1718801282"
+        },
+        {
+            "location": "IIT Delhi Campus",
+            "address": "Food Court, Shopping Complex, IIT Campus, Hauz Khas, New Delhi,110016",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/IIT_DELHI_CAMPUS_480x480.png?v=1718801241"
+        },
+        {
+            "location": "Airport Cargo Terminal",
+            "address": "Shop No.2, Ground Floor, Gate No5, Delhi Air, Delhi Cargo Terminal, T2 Road, New Delhi, Delhi110037",
+            "image": "https://cdn.shopify.com/s/files/1/0774/9769/6567/files/Airport_Cargo_Terminal_480x480.png?v=1718793723"
+        }
+    ],
+    "contact_info": {
+        "address": "A-28, Lawrence Road Industrial Area, Keshav Puram, Shakurpur, New Delhi, Delhi,110035",
+        "email": "customercare@bikanervala.com",
+        "phone": [
+            "+919650075931",
+            "+91-11-47006735"
+        ],
+        "working_hours": "Mon to Sat, 10 AM To 6 PM"
+    },
+    "categories": [
+        "Fresh Sweets",
+        "Packed Sweets",
+        "Namkeen",
+        "Bikano",
+        "Bhujia & Sev",
+        "Nuts & Dals",
+        "Mixture",
+        "Boondi",
+        "Tin Sweets",
+        "Soan papdi",
+        "Laddu",
+        "Petha",
+        "Bakery",
+        "Cookies",
+        "Cake Rusk",
+        "Cookies Combo",
+        "Ready To Eat Food",
+        "Gravies",
+        "Ready To Eat Rice",
+        "Ready To Eat Paneer",
+        "Snacks",
+        "Chips",
+        "Crunchy Munchy",
+        "Chatax Sticks",
+        "Tapri Tales",
+        "Matthi",
+        "Rusk",
+        "Combos",
+        "Schemes/Offers",
+        "Sweets (BOGO)",
+        "Offer on Snacks",
+        "Namkeen Flat50 Rs. Off",
+        "Papad",
+        "Amritsari Papad",
+        "Kali Mirch Papad",
+        "Beverages"
+    ],
+    "promotions": [
+        {
+            "description": "Flat \u20b9100 Off on (fresh sweets)1499 + Free Delivery on \u20b91000 Across India."
+        },
+        {
+            "description": "Orders will be dispatched within 24 working hours."
+        }
+    ]
+}
+2025-04-20 00:44:57,537 - root - INFO - Scraped https://www.bikanervala.com/pages/delhi using ScrapeGraphAIFetcher

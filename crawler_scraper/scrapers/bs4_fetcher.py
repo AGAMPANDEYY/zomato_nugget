@@ -2,6 +2,7 @@
 """Simple HTML fetch via requests with UA & proxy rotation."""
 import requests
 import random 
+import logging
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
@@ -26,4 +27,6 @@ def BS4Fetcher(url: str) -> str:
     session.mount("http://", HTTPAdapter(max_retries=retries))
     resp = session.get(url, timeout=15)
     resp.raise_for_status()
+
+    logging.info(f"Fetched {resp.text} from {url}")
     return resp.text
