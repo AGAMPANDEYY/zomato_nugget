@@ -1,3 +1,4 @@
+.vscode/
 venv_zomato/
 .env
 __pycache__/
