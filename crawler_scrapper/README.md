@@ -1,5 +1,36 @@
 # rag-crawler
 
+                           ┌─────────────────────────────┐
+                           │    User starts pipeline      │
+                           └────────────┬────────────────┘
+                                        ▼
+                           ┌─────────────────────────────┐
+                           │      orchestrator.py         │
+                           └────────────┬────────────────┘
+                                        ▼
+        ┌────────────────────────────────────────────────────────────────────┐
+        │              CRAWLING: Choose between Scrapy ↔ Crawl4AI            │
+        └────────────┬───────────────────────────────────────────────────────┘
+                     ▼
+    ┌──────────────────────────────────────────────────────────────────────────────┐
+    │        If known static sitemap → use Scrapy                                 │
+    │        If site is messy or semantically deep → use Crawl4AI                 │
+    │        Crawl4AI uses GPT to pick only relevant links from the page          │
+    └──────────────────────────────────────────────────────────────────────────────┘
+                     ▼
+        ┌────────────────────────────────────────────────────────────────────┐
+        │            SCRAPER ROUTING: Choose based on page type              │
+        └────────────┬───────────────────────────────────────────────────────┘
+                     ▼
+     ┌─────────────┬──────────────┬──────────────┬────────────────────────────┐
+     │ BeautifulSoup │ Scrapy Spider │ Selenium       │ ScrapeGraphAI (LLM parsing) │
+     └─────────────┴──────────────┴──────────────┴────────────────────────────┘
+                     ▼
+              Clean → Normalize → Save → Embed → RAG
+
+
+
+
 ## Overview
 The `rag-crawler` project is a production-ready web crawler and scraper designed to gather restaurant data efficiently. It utilizes various technologies and libraries to ensure robust and scalable data extraction.
 
