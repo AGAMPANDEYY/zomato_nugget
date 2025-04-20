@@ -16,3 +16,8 @@ google-generativeai
 # Data Processing Libraries
 pyiceberg[s3fs,hive]
 pyarrow
+
+
+#RAG 
+weaviate-client
+neo4j

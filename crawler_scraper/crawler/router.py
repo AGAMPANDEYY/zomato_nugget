@@ -70,6 +70,7 @@ class ScraperRouter:
                     logging.debug(f"Attempting {fetcher_name} for {url}")
                     # Call the async fetcher function with the URL
                     content = await fetcher(url)
+                    # Crawl4AI will return a dict with Markdown and Media, while others will return a JSON
                     combined_scrapped_data[fetcher_name].append((url, content))
 
                 except Exception as e:
