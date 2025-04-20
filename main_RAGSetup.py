@@ -1,10 +1,12 @@
 import asyncio
-from crawler_scraper.run_crawler_scraper import crawler_scraper_main
-from ingestion.datalake import DataLake  # adjust based on your ingestion module's function
 import os 
 from dotenv import load_dotenv
 import datetime
 from datetime import datetime
+
+from crawler_scraper.run_crawler_scraper import crawler_scraper_main
+from ingestion.datalake import DataLake  # adjust based on your ingestion module's function
+from retrieval.hybrid_retriever import *
 
 load_dotenv()
 # Load environment variables from .env file

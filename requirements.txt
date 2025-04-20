@@ -21,3 +21,17 @@ pyarrow
 #RAG 
 weaviate-client
 neo4j
+#Retrieval 
+llama-index-vector-stores-weaviate
+llama-index
+
+#LangChain Libraries
+langchain 
+langgraph 
+tavily-python
+huggingface-hub 
+transformers
+langchain-huggingface
+llama-index-callbacks-langfuse
+
+
