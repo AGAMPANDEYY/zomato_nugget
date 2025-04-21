@@ -16,6 +16,16 @@ from knowledge_base.normalize_records import normalize_records
 from knowledge_base.chunking import chunk_record
 import asyncio, json
 
+
+from langchain.llms import HuggingFaceHub
+from langchain_huggingface import HuggingFaceEndpoint
+from langchain.chains import LLMChain
+from langchain.agents import AgentExecutor, create_tool_calling_agent
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.chat_history import InMemoryChatMessageHistory
+from langchain_core.runnables.history import RunnableWithMessageHistory
+from langgraph.prebuilt import create_react_agent
+
 # Load environment variables
 dotenv_path = os.getenv('DOTENV_PATH', None)
 if dotenv_path:
@@ -95,17 +105,6 @@ def dynamic_scrape(query: str) -> str:
 # -------------------- AGENT INITIALIZATION --------------------
 # LLM and conversation memory setup
 
-from langchain.llms import HuggingFaceHub
-from langchain_huggingface import HuggingFaceEndpoint
-from langchain.chains import LLMChain
-from langchain.agents import AgentExecutor, create_tool_calling_agent
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.chat_history import InMemoryChatMessageHistory
-from langchain_core.runnables.history import RunnableWithMessageHistory
-from langgraph.prebuilt import create_react_agent
-
-
-
 hf_llm = HuggingFaceEndpoint(
     repo_id="bitext/Mistral-7B-Restaurants",
     model_kwargs={"temperature": 0.3, "max_length": 512},
@@ -139,8 +138,7 @@ agent_with_chat_history = RunnableWithMessageHistory(
 
 config = {"configurable": {"session_id": "test-session"}}
 
+
 agent_with_chat_history.invoke(
         {"input": "Which restaurant Pizzahut or Dominos has spicier pizza?"}, config
     )["output"]
-
-

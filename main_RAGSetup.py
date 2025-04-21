@@ -4,6 +4,10 @@ from dotenv import load_dotenv
 import datetime
 from datetime import datetime
 
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 from crawler_scraper.run_crawler_scraper import crawler_scraper_main
 from ingestion.datalake import DataLake  # adjust based on your ingestion module's function
 from retrieval.hybrid_retriever import *

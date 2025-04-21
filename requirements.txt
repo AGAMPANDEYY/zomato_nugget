@@ -16,6 +16,7 @@ google-generativeai
 # Data Processing Libraries
 pyiceberg[s3fs,hive]
 pyarrow
+pyiceberg[sql-sqlite,pyarrow]
 
 
 #RAG 

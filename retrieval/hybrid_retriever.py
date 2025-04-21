@@ -14,7 +14,7 @@ from llama_index.core import VectorStoreIndex
 from llama_index.vector_stores.weaviate import WeaviateVectorStore
 from neo4j import GraphDatabase
 from llama_index.core import StorageContext
-from llama_index.core.retrievers import BM25Retriever
+from llama_index.retrievers.bm25 import BM25Retriever
 from llama_index.core.postprocessor import SentenceTransformerRerank
 
 # --------------------- WEAVIATE CONNECTION & LlamaIndex Setup ----------------------

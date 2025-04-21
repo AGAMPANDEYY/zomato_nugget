@@ -5,8 +5,8 @@
     "swiggy_roorkee_cookhouse":{
         "base_url": "https://www.swiggy.com/city/roorkee/the-cook-house-civil-lines-rest320649?restaurant_id=320649&source=collection&query=North%20Indian"
     },
-    "bikanerwala": {
-        "base_url": "https://www.bikanervala.com"
+    "swiggy_roorkee_ccd":{
+        "base_url": "https://www.swiggy.com/city/roorkee/cafe-coffee-day-new-haridwar-road-roorkee-rest320822"
     },
     "dominos": {
         "base_url": "https://pizzaonline.dominos.co.in/jfl-discovery-ui/en/web/home/66090?&src=brand"
@@ -19,5 +19,15 @@
     }, 
     "sankalprestaurants": {
         "base_url": "https://sankalprestaurants.com/"
+    },
+    "belgian_waffles":{
+        "base_url":"https://thebelgianwaffle.co/"
+    }, 
+    "wow_momos":{
+        "base_url":"https://www.wowmomo.com/"
+    },
+    "berco":{
+        "base_url":"https://bercos.net.in/"
     }
+
 }

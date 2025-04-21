@@ -5,30 +5,23 @@ from crawl4ai import CrawlerRunConfig, CacheMode, BrowserConfig
 import logging
 import asyncio
 
+DOWNLOAD_DELAY=5
 
-async def Crawl4AIFetcher(url: str) -> dict:
+async def Crawl4AIFetcher(
+    crawler: AsyncWebCrawler,
+    run_cfg: CrawlerRunConfig,
+    url: str
+) -> dict:
+    """Fetch a single URL using a shared crawler instance."""
+    logging.info(f"Fetching: {url}")
+    await asyncio.sleep(DOWNLOAD_DELAY)  # polite delay
 
-    print(f"Fetching data from {url}...")
-    browser_cfg = BrowserConfig(
-            browser_type="chromium",
-            headless=True,
-            verbose=True
-        )
-    
-    crawl_cfg = CrawlerRunConfig(
-            cache_mode=CacheMode.BYPASS,
-            css_selector="main.article",
-            word_count_threshold=10,
-            screenshot=True
-        )
+    # Perform the crawl with your run config
+    result = await crawler.arun(url=url, config=run_cfg)
+    if not result.success:
+        raise RuntimeError(f"Crawl4AI failed: {result.error_message}")
 
-    async with AsyncWebCrawler(config=browser_cfg) as crawler:
-        res = await crawler.arun(url, config=crawl_cfg)
-    if not res.success:
-        raise Exception(f"Crawl4AI failed: {res.error_message}")
-    logging.info(f"Crawl4AI response for {url}: {res.markdown}")
-    return {'content': res.markdown, 'media': res.media} 
-
+    return {"content": result.markdown, "media": result.media}
     # the output structure is in this format below 
     """
     class CrawlResult(BaseModel):

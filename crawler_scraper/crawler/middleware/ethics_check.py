@@ -24,22 +24,16 @@ class EthicalScrapingChecker:
         self.rate_limit = 2.0  # seconds between requests to same domain
         self.user_agent = "MyRAGBot/1.0 (responsible scraping bot)"
 
-    async def fetch_robots_txt(self, domain: str) -> RobotFileParser:
+    def fetch_robots_txt(self, domain: str) -> RobotFileParser:
         if domain in self._robots_cache:
             return self._robots_cache[domain]
 
         rp = RobotFileParser()
         robots_url = f"https://{domain}/robots.txt"
         
+        rp.set_url(robots_url)
         try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(robots_url) as response:
-                    if response.status == 200:
-                        robots_content = await response.text()
-                        rp.parse(robots_content.splitlines())
-                    else:
-                        # If no robots.txt, assume everything is allowed
-                        rp.allow_all = True
+            rp.read()
         except Exception as e:
             logging.warning(f"Could not fetch robots.txt for {domain}: {e}")
             rp.allow_all = True
@@ -56,7 +50,7 @@ class EthicalScrapingChecker:
         self._last_access[domain] = current_time
         return True
 
-async def is_allowed(url: str) -> bool:
+def is_allowed(url: str) -> bool:
     """
     Check if scraping is allowed for the given URL by:
     1. Checking robots.txt rules
@@ -72,7 +66,7 @@ async def is_allowed(url: str) -> bool:
         domain = parsed_url.netloc
         
         # Check robots.txt
-        rp = await checker.fetch_robots_txt(domain)
+        rp = checker.fetch_robots_txt(domain)
         if not rp.can_fetch(checker.user_agent, parsed_url.path):
             logging.info(f"Blocked by robots.txt: {url}")
             return False

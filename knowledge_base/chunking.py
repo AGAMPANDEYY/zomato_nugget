@@ -5,7 +5,7 @@ from itertools import combinations
 # --- 1. Semantic Menu Item Chunking ---
 # Uses LangChain Experimental SemanticChunker to split high-level menu sections.
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 # Fallback to character splitter if experimental semantic splitter not available
 char_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)

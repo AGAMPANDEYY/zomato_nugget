@@ -1,0 +1,6 @@
+catalog:
+  local_datalake:
+    type: sql
+    uri: sqlite:///C:/Agam/Work/zomato_nugget/iceberg_catalog/pyiceberg.db
+    warehouse: file:///C:/Agam/Work/zomato_nugget/iceberg_catalog/warehouse
+

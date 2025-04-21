@@ -1,0 +1,108 @@
+{
+  "dominos": {
+    "base_url": "https://pizzaonline.dominos.co.in/jfl-discovery-ui/en/web/home/66090?&src=brand",
+    "crawled_urls": [
+      "https://pizzaonline.dominos.co.in/jfl-discovery-ui/en/web/home/66090?&src=brand"
+    ]
+  },
+  "indian_restaurants": {
+    "base_url": "https://indiarestaurant.co.in/",
+    "crawled_urls": [
+      "https://indiarestaurant.co.in/gallery.html",
+      "https://indiarestaurant.co.in/",
+      "https://indiarestaurant.co.in/menu.html",
+      "https://indiarestaurant.co.in/#reserve",
+      "https://indiarestaurant.co.in/about.html",
+      "https://indiarestaurant.co.in/contacts.html"
+    ]
+  },
+  "sankalprestaurants": {
+    "base_url": "https://sankalprestaurants.com/",
+    "crawled_urls": [
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Utahppam-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Unzhundu-Bombs-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/DSC01715-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/DSC01580-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Jali-Dosa-scaled.jpg",
+      "https://sankalprestaurants.com/south-indian-restaurant-near-me/",
+      "https://sankalprestaurants.com/sankalp-signature/",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Vada-Sambar-scaled.jpg",
+      "https://sankalprestaurants.com/about-us/",
+      "https://sankalprestaurants.com/menu/",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Kurma-Bhaji-WIth-Malabar-Paratha-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Idli-Vada-scaled.jpg",
+      "https://sankalprestaurants.com",
+      "https://sankalprestaurants.com/locations",
+      "https://sankalprestaurants.com/",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Golder-Crispy-Dosa-scaled.jpg",
+      "https://sankalprestaurants.com/contact/",
+      "https://sankalprestaurants.com/about-us",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Mix-Veg-Uttapam-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Butter-Uttapam-scaled.jpg",
+      "https://sankalprestaurants.com/gallery/",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Chaos-Dosa-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Channai-Pizza-Utthpa-scaled.jpg",
+      "https://sankalprestaurants.com/blog/",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Mendu-Vada-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Rava-Dosa-scaled.jpg",
+      "https://sankalprestaurants.com/wp-content/uploads/2023/08/Idli-Sambar-scaled.jpg",
+      "https://sankalprestaurants.com/menu",
+      "https://sankalprestaurants.com/gallery"
+    ]
+  },
+  "belgian_waffles": {
+    "base_url": "https://thebelgianwaffle.co/",
+    "crawled_urls": [
+      "https://thebelgianwaffle.co/#connect",
+      "https://thebelgianwaffle.co/whats-new/",
+      "https://thebelgianwaffle.co/about-us/",
+      "https://thebelgianwaffle.co/nutritional-information/",
+      "https://thebelgianwaffle.co/food-franchise/",
+      "https://thebelgianwaffle.co/disclaimer/",
+      "https://thebelgianwaffle.co/food-franchise/franchiseapplication/",
+      "https://thebelgianwaffle.co/ready-to-eat-products/",
+      "https://thebelgianwaffle.co/menu/",
+      "https://thebelgianwaffle.co/#0",
+      "https://thebelgianwaffle.co/catering-waffles/",
+      "https://thebelgianwaffle.co/sitemap/",
+      "https://thebelgianwaffle.co/careers/",
+      "https://thebelgianwaffle.co/news/",
+      "https://thebelgianwaffle.co/franchise-2/",
+      "https://thebelgianwaffle.co/wp-content/uploads/2024/07/POSH-Policy-new.pdf",
+      "https://thebelgianwaffle.co/locations/",
+      "https://thebelgianwaffle.co/gallery/",
+      "https://thebelgianwaffle.co/awards-and-recognition/",
+      "https://thebelgianwaffle.co/terms-conditions/",
+      "https://thebelgianwaffle.co/"
+    ]
+  },
+  "wow_momos": {
+    "base_url": "https://www.wowmomo.com/",
+    "crawled_urls": [
+      "https://www.wowmomo.com/privacy",
+      "https://www.wowmomo.com/#contact",
+      "https://restaurantswowchina.wowmomo.com",
+      "https://restaurantschinabelly.wowmomo.com",
+      "https://restaurants.wowmomo.com",
+      "https://www.wowmomo.com/#story",
+      "https://restaurantswowchicken.wowmomo.com",
+      "https://www.wowmomo.com/",
+      "https://www.wowmomo.com"
+    ]
+  },
+  "berco": {
+    "base_url": "https://bercos.net.in/",
+    "crawled_urls": [
+      "https://bercos.net.in/about1",
+      "https://bercos.net.in/",
+      "https://bercos.net.in/franchise-enquiry",
+      "https://bercos.net.in/menu",
+      "https://bercos.net.in/privacy-policy",
+      "https://bercos.net.in/onlineorder/",
+      "https://bercos.net.in/#top",
+      "https://bercos.net.in/locations",
+      "https://bercos.net.in/terms-conditions",
+      "https://bercos.net.in/contact"
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 import json
 from pyiceberg.catalog import load_catalog
+from ingestion.datalake import DataLake
 import pyarrow as pa
 import os 
 import logging
@@ -19,11 +20,16 @@ class DataLakeFetcher:
         NAMESPACE = os.getenv("NAMESPACE")
         TABLE_NAME = os.getenv("TABLE_NAME")
         TABLE_IDENTIFIER = [NAMESPACE, TABLE_NAME]  
+        DB_NAME=os.getenv("DB_NAME")
+        COLLECTION_NAME= os.getenv("COLLECTION_NAME")
+
         self.catalog_name= CATALOG_NAME
         self.warehouse_path= WAREHOUSE_PATH
         if not self.table_name:
             raise ValueError("Environment variable TABLE_NAME must be set")
         self.table_identifier= TABLE_IDENTIFIER
+        self.db_name=DB_NAME
+        self.collection_name=COLLECTION_NAME
 
 
     # --- Data Lake Access: Load records from the Iceberg table --- 
@@ -64,4 +70,16 @@ class DataLakeFetcher:
 
         except Exception as e:
             logging.error(f"Error fetching from Iceberg: {e}", exc_info=True)
+            return []
+        
+    # --- MongoDB Atlas Access ---
+    def fetch_records_from_mongodbatlas(self):
+        """Fetch records from MongoDB Atlas collection."""
+        try:
+            datalake = DataLake(db_name=self.db_name, collection_name=self.collection_name)
+            records = datalake.get_all_documents()
+            logging.info(f"Fetched {len(records)} records from MongoDB Atlas")
+            return records
+        except Exception as e:
+            logging.error(f"Error fetching from MongoDB Atlas: {e}", exc_info=True)
             return []
