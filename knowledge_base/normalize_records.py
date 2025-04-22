@@ -1,28 +1,34 @@
 
 import json
+import uuid
+from datetime import datetime, timezone
 
-async def normalize_records(raw_data):
-
-    """
-    Recursively normalize records from different fetchers into a common format.
-    """
+async def normalize_records(processed: dict) -> list[dict]:
     flattened = []
     
-    for fetcher, entries in raw_data.items():
-        for url, content in entries:
-            if fetcher == "Crawl4AIFetcher":
-                markdown_text = content.get("markdown", "")
-                flattened.append({
-                    "source": "crawl4ai",
-                    "url": url,
-                    "text": markdown_text,
-                    "media": content.get("media", [])
-                })
-            else:
-                flattened.append({
-                    "source": fetcher.lower(),
-                    "url": url,
-                    "text": json.dumps(content),  # You can chunk later
-                    "metadata": content  # for filtering & queries
-                })
+    for restaurant_name, info in processed.items():
+        print(f" Normalizing: {restaurant_name}")
+        base_url = info.get("base_url", "")
+        
+        # Case 1: Direct/Flat document
+        if "markdown" in info or "html" in info:
+            ts = info.get("timestamp")
+            if not isinstance(ts, datetime):
+                try:
+                    ts = datetime.fromisoformat(ts)
+                except:
+                    ts = datetime.now(timezone.utc)
+
+            flattened.append({
+                "chunk_id": f"{restaurant_name}_{uuid.uuid4()}",
+                "scraper_name": info.get("scraper_name", "Unknown"),
+                "restaurant_name": restaurant_name,
+                "base_url": base_url,
+                "url": info.get("url", ""),
+                "markdown": info.get("markdown", ""),
+                "html": info.get("html", ""),
+                "media": info.get("media", {}),
+                "timestamp": ts
+            })
     return flattened
+

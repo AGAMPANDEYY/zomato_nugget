@@ -52,4 +52,4 @@ class DataLake:
             print(f" Error while querying: {e}")
             return []
     def get_all_documents(self):
-        return list(self.collection.find({}, {'_id': False}))  # Optional: exclude _id
+        return list(self.collection.find({}))  # Optional: exclude _id

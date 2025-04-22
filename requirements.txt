@@ -35,4 +35,7 @@ transformers
 langchain-huggingface
 llama-index-callbacks-langfuse
 
+#langchain tools
+google-search-results
 
+blobfile

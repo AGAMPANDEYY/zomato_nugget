@@ -11,7 +11,7 @@ neo4j_driver = GraphDatabase.driver(
     auth=(os.getenv("NEO4J_USER", "neo4j"), os.getenv("NEO4J_PASSWORD", "password"))
 )
 
-@tool(name="GraphQuery", description="Query Neo4j for custom relational data")
+@tool("GraphQuery", description="Query Neo4j for custom relational data")
 def graph_query(cypher_query: str) -> str:
     with neo4j_driver.session() as session:
         result = session.run(cypher_query)

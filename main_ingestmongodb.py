@@ -73,7 +73,6 @@ def flatten_rows(processed: dict) -> list[dict]:
         for entry in info.get("fetched", []):
             data = entry.get("data", {})
             metadata = data.get("metadata", {})
-            content = data.get("content", {})
             media = data.get("media", {})
 
             ts_str = metadata.get("timestamp")
@@ -84,10 +83,11 @@ def flatten_rows(processed: dict) -> list[dict]:
 
             rows.append({
                 "id": f"{restaurant}_{uuid.uuid4()}",
+                "restaurant_name": restaurant,
                 "scraper_name": "Crawl4AIFetcher",
                 "url": entry.get("url", ""),
-                "markdown": content.get("markdown", ""),
-                "html": content.get("html", ""),
+                "markdown": data.get("markdown", ""),
+                "html": data.get("html", ""),
                 "media": media,
                 "timestamp": ts
             })
@@ -101,7 +101,7 @@ def main():
     dl = DataLake(db_name=DB_NAME, collection_name=COLLECTION_NAME)
     dl.create_collection()
     dl.append_rows(rows)
-    print("✅ MongoDB ingestion complete.")
+    print("MongoDB ingestion complete.")
 
 if __name__ == "__main__":
     main()
