@@ -1,4 +1,4 @@
-# Restaurant Assistant Hybrid (RAH) Chatbot
+# Restaurant Assistant Hybrid (RAH) Chatbot: HybridRAG: inspired by https://arxiv.org/html/2408.04948v1
 
 ## Overview
 
