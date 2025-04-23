@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Restaurant Concierge</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container py-5">
+        <!-- Header -->
+        <header class="mb-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="/static/img/zomato_logo.png" alt="Zomato Logo" class="zomato-logo me-3">
+                    <h1 class="mb-0">
+                        <span class="zomato-heading">Zomato</span>
+                        <span class="nugget-heading">NuggetChat</span>
+                    </h1>
+                </div>
+                <button id="clear-chat" class="btn btn-outline-danger" onclick="clearChat()">
+                    <i class="fas fa-trash-alt me-2"></i>Clear Chat
+                </button>
+            </div>
+            <p class="header-tagline">
+                Your personal assistant for discovering exquisite dining experiences.
+            </p>
+        </header>
+
+        <!-- Main Chat Interface -->
+        <div class="card border-0">
+            <div id="chat-container" class="chat-container">
+                <!-- Welcome Screen -->
+                <div id="welcome-screen" class="welcome-screen">
+                    <h2 class="mb-4 zomato-heading">Welcome to Zomato Concierge</h2>
+                    <p class="mb-4 fw-light">
+                        I'm your personal restaurant assistant, ready to help you discover exceptional dining experiences. 
+                        Ask me about restaurant menus, culinary specialties, wine pairings, or dietary accommodations.
+                    </p>
+                    
+                    <div class="example-queries">
+                        <h5 class="mb-3 text-secondary fw-normal">How may I assist you today?</h5>
+                        <div class="list-group">
+                            <div class="example-query list-group-item border-0 bg-light mb-3 shadow-sm rounded">
+                                Which restaurants offer premium wine pairings with their tasting menus?
+                            </div>
+                            <div class="example-query list-group-item border-0 bg-light mb-3 shadow-sm rounded">
+                                What signature dishes does La Petite Maison feature on their seasonal menu?
+                            </div>
+                            <div class="example-query list-group-item border-0 bg-light mb-3 shadow-sm rounded">
+                                Are there any fine dining establishments with innovative vegetarian tasting experiences?
+                            </div>
+                            <div class="example-query list-group-item border-0 bg-light mb-3 shadow-sm rounded">
+                                Compare the chef's special tasting menus at Mirage and The Grand Pavilion
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Chat messages will be inserted here by JavaScript -->
+            </div>
+            
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-group">
+                    <textarea 
+                        id="message-input" 
+                        class="form-control" 
+                        placeholder="Ask about restaurants, menus, or special dining experiences..."
+                        rows="1"
+                    ></textarea>
+                    <button id="send-button" class="btn btn-zomato">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="mt-4 text-center text-muted">
+            <p class="small fw-light">
+                Powered by Zomato • Curated restaurant information updated daily
+            </p>
+        </footer>
+    </div>
+      <!-- Feature Categories Fixed -->
+  <div class="feature-categories-fixed">
+    <h5 class="mb-3 text-center fw-semibold">Explore by Category</h5>
+    <div class="row g-3 justify-content-center">
+      <div class="col-6 col-md-2">
+        <div class="feature-card">
+          <div class="icon-container"><i class="fas fa-leaf"></i></div>
+          <p>Veg Options</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="feature-card">
+          <div class="icon-container"><i class="fas fa-utensils"></i></div>
+          <p>Gourmet</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="feature-card">
+          <div class="icon-container"><i class="fas fa-heart"></i></div>
+          <p>Healthy</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="feature-card">
+          <div class="icon-container"><i class="fas fa-clock"></i></div>
+          <p>Quick Delivery</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="feature-card">
+          <div class="icon-container"><i class="fas fa-gift"></i></div>
+          <p>Gift Cards</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="feature-card">
+          <div class="icon-container"><i class="fas fa-percent"></i></div>
+          <p>Offers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

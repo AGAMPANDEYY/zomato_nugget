@@ -40,3 +40,5 @@ google-search-results
 
 blobfile
 fastapi
+uvicorn
+flask

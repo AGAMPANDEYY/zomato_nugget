@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: zomato-rag-chatbot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.10"
+      - key: PORT
+        value: "5000"
+
+# ℹ️ Manual Setup Instructions:
+# Set the following environment variables manually in the Render dashboard:
+# - API keys for LLMs (e.g., OPENAI_API_KEY, ANTHROPIC_API_KEY, etc.)
+# - Database URIs (e.g., MONGO
