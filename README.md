@@ -92,13 +92,37 @@ For a detailed explanation of each component, please refer to the individual mod
 
 The web scraping implementation follows a multi-stage approach:
 
-1. **URL Seed Collection**: Created a `seed_url.json` file containing base URLs of target restaurant websites
+1. **URL Seed Collection**: Created a `seed_url.json` file containing base URLs of target restaurant websites. **For reference:** 
+
+```json
+{
+    "indian_restaurants": {
+        "base_url": "https://indiarestaurant.co.in/"
+    }, 
+    "sankalprestaurants": {
+        "base_url": "https://sankalprestaurants.com/"
+    },
+    "belgian_waffles":{
+        "base_url":"https://thebelgianwaffle.co/"
+    }, 
+    "wow_momos":{
+        "base_url":"https://www.wowmomo.com/"
+    },
+    "berco":{
+        "base_url":"https://bercos.net.in/"
+    }
+
+}
+```
+   
 2. **Ethical Web Crawling**: Implemented a robust crawling system that respects robots.txt directives and follows ethical web crawling practices
 3. **Multi-Strategy Scraping**: Employed multiple scraping technologies to ensure comprehensive data extraction
 
 #### Why Multiple Scrapers?
 
 I implemented a system using multiple scraping technologies (Crawl4AI, BeautifulSoup, Selenium) to address the diverse nature of restaurant websites:
+   
+<img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/scrapers.png">
 
 - **Crawl4AI**: Efficient for static content and basic site navigation
 - **BeautifulSoup**: Excellent for parsing HTML structure and extracting specific elements
@@ -113,6 +137,30 @@ This multi-scraper approach addressed several key challenges:
 - Menu information is often presented in complex nested structures or tables
 
 #### Data Extraction Details
+```json
+{
+  "_id": {
+    "$oid": "6809385f0ea85dae1acdfc89"
+  },
+  "id": "dominos_94d6eab9-1e49-46dd-83f4-b508d43b58fa",
+  "restaurant_name": "dominos",
+  "scraper_name": "Crawl4AIFetcher",
+  "url": "https://pizzaonline.dominos.co.in/jfl-discovery-ui/en/web/home/66090?&src=brand",
+  "markdown": "...............Fetched Markdown content...............",
+  "html": "..........Raw HTML.........."
+  "media": {
+    "images": ["image_metadata including url"],
+    "videos": [],
+    "audios": [],
+    "tables": []
+  },
+  "timestamp": {
+    "$date": {
+      "$numberLong": "1745311198889"
+    }
+  }
+}
+```
 
 The scraping system captured:
 - Restaurant name and location information
@@ -120,7 +168,7 @@ The scraping system captured:
 - Special features (vegetarian options, allergen information, spice levels)
 - Operating hours and contact information
 
-### Data Lake Integration
+### Data Lake Integration (MongoDB Atlas)
 
 Instead of directly building the RAG database, I implemented a data lake approach as an intermediate step:
 
@@ -151,6 +199,7 @@ The knowledge base creation involved sophisticated chunking strategies to optimi
 | Graph‑Based   | Nodes and edges between restaurants, menus, items    | "Compare spice levels across menus"           |
 | Attribute‑Based | Tags by price, allergens, etc.                    | "Filter dishes under ₹500"                    |
 
+<img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/chunking_strategies.png"> 
 
 Each chunk was stored as a dictionary with text content and associated metadata for efficient retrieval.
 
@@ -158,7 +207,9 @@ Each chunk was stored as a dictionary with text content and associated metadata 
 - **Weaviate**: Vector embeddings with metadata filtering
 - **Neo4j**: Entity‑relationship graph for structured queries
 
-### RAG Implementation
+<img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/neo4j.png">
+
+### RAG Implementation (HybridRAG: inspired by https://arxiv.org/html/2408.04948v1)
 
 The RAG system incorporates a hybrid approach combining vector and graph databases:
 
@@ -180,6 +231,8 @@ The hybrid RAG system addresses different types of user queries:
 
 
 ### RAG Engine
+
+<img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/HybridRAG.png">
 
 1. **Retrieval**:
    - **Weaviate**: k‑nearest neighbor on text embeddings with BM25 fallback
@@ -212,6 +265,7 @@ Each user interaction is instrumented using **LangFuse traces** to capture:
 - Latency and error metrics
 - Session-level context and tool invocations
 
+<img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/LangFuse.png">
 **Importance**:
 - **Debugging**: Rapid identification of failures in retrieval or generation
 - **Performance Monitoring**: Track response times and optimize bottlenecks
@@ -234,22 +288,23 @@ The entire application is packaged in Docker for consistent and reproducible dep
 
 #### Build and Run Commands
 ```bash
-# Build the Docker image
+Build the Docker image
 docker build -t rah-chatbot:latest .
+```
 
-# Run the container in detached mode
+Run the container in detached mode
+```bash
 docker run -d \
   --name rah-chatbot \
   --env-file .env \
   -p 8000:8000 \
   -p 3000:3000 \
   rah-chatbot:latest
-
-# View container logs
+```
+View container logs
+```bash
 docker logs -f rah-chatbot
 ```
-
-
 
 ## Challenges and Solutions
 
@@ -329,38 +384,3 @@ Several enhancements could further improve the system:
 - **User Feedback Loop**: Incorporate user feedback to improve retrieval and response quality
 - **Multi-language Support**: Extend capabilities to support queries in multiple languages
 
-
-## Docker Setup
-Prerequisites
-
-Docker and Docker Compose installed on your system
-
-Running with Docker
-bash# Clone the repository
-git clone https://github.com/yourusername/rah-chatbot.git
-cd rah-chatbot
-
-# Copy environment variables example and edit
-cp .env.example .env
-# Edit .env with your credentials and configuration
-
-# Build and start all containers
-docker-compose up --build
-
-# Or run specific components
-docker-compose up --build scraper
-docker-compose up --build knowledge-base
-docker-compose up --build chatbot-api
-docker-compose up --build ui
-Useful Docker Commands
-bash# View logs for specific service
-docker-compose logs -f chatbot-api
-
-# Restart a specific service
-docker-compose restart knowledge-base
-
-# Stop all services
-docker-compose down
-
-# Clean volumes for fresh start
-docker-compose down -v
