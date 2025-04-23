@@ -269,6 +269,7 @@ Each user interaction is instrumented using **LangFuse traces** to capture:
 - Session-level context and tool invocations
 
 <img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/LangFuse.png">
+
 **Importance**:
 - **Debugging**: Rapid identification of failures in retrieval or generation
 - **Performance Monitoring**: Track response times and optimize bottlenecks
@@ -346,26 +347,17 @@ The combination of vector-based and graph-based retrieval provides more comprehe
 ### Multimodal Data Integration
 By extracting text from menu images and screenshots, the system incorporates information that would be missed by traditional text-only scraping, particularly for restaurants that present menus as images or have visually distinctive menu sections.
 
-
 ## Example Queries
 
 The system effectively handles a wide range of restaurant-related queries:
 
-### Menu Availability Queries
-- "Does Bella Italia have any gluten-free pasta options?"
-- "What vegetarian appetizers does Golden Dragon offer?"
+| **Category**                  | **Example Queries**                                                                 |
+|------------------------------|-------------------------------------------------------------------------------------|
+| **Menu Availability Queries** | - "Does Bella Italia have any gluten-free pasta options?"  <br> - "What vegetarian appetizers does Golden Dragon offer?" |
+| **Price Comparison Queries**  | - "Which restaurant has the most affordable dessert menu?" <br> - "Compare the price range of seafood dishes between Ocean Grill and Harbor House." |
+| **Dietary Restriction Queries** | - "List all vegan-friendly dishes at Green Earth Café." <br> - "Which restaurant has the most extensive keto-friendly menu options?" |
+| **Feature Comparison Queries** | - "Which restaurant has more spicy options, Spice Garden or Thai Palace?" <br> - "Compare the beverage selections between Coffee House and Tea Time." |
 
-### Price Comparison Queries
-- "Which restaurant has the most affordable dessert menu?"
-- "Compare the price range of seafood dishes between Ocean Grill and Harbor House."
-
-### Dietary Restriction Queries
-- "List all vegan-friendly dishes at Green Earth Café."
-- "Which restaurant has the most extensive keto-friendly menu options?"
-
-### Feature Comparison Queries
-- "Which restaurant has more spicy options, Spice Garden or Thai Palace?"
-- "Compare the beverage selections between Coffee House and Tea Time."
 
 ## Limitations
 
