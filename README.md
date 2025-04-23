@@ -5,19 +5,23 @@
 The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI solution that combines advanced web scraping techniques with a Retrieval Augmented Generation (RAG) system. This project enables users to ask natural language questions about restaurants and receive accurate, contextual responses based on up-to-date information scraped from restaurant websites.
 
 ## Table of Contents
-- [System Architecture](#system-architecture)
-- [Setup Instructions](#setup-instructions)
-- [Implementation Details](#implementation-details)
-  - [Web Scraping Module](#web-scraping-module)
-  - [Data Lake Integration](#data-lake-integration)
-  - [Knowledge Base Creation](#knowledge-base-creation)
-  - [RAG Implementation](#rag-implementation)
-  - [Chatbot Interface](#chatbot-interface)
-- [Challenges and Solutions](#challenges-and-solutions)
-- [Novel Approaches](#novel-approaches)
-- [Example Queries](#example-queries)
-- [Limitations](#limitations)
-- [Future Improvements](#future-improvements)
+1. [Overview](#overview)
+2. [System Architecture](#system-architecture)
+3. [Implementation Details](#implementation-details)
+   - [Web Scraping Module](#web-scraping-module)
+   - [Data Lake Integration](#data-lake-integration)
+   - [Knowledge Base Creation](#knowledge-base-creation)
+   - [RAG Engine](#rag-engine)
+   - [Chat Interface](#chat-interface)
+   - [Observability & Tracing](#observability--tracing)
+   - [Containerization & Deployment](#containerization--deployment)
+4. [Challenges and Solutions](#challenges-and-solutions)
+5. [Innovations](#innovations)
+6. [Example Queries](#example-queries)
+7. [Limitations](#limitations)
+8. [Future Improvements](#future-improvements)
+9. [Setup Instructions](#setup-instructions)
+10. [Demo](#demo)
 
 ## System Architecture
 
@@ -29,7 +33,9 @@ The RAH Chatbot system follows a modular architecture consisting of:
 2. **Data Lake Storage**: Stores raw processed data in structured format
 3. **Knowledge Base Module**: Processes and indexes data for efficient retrieval
 4. **Hybrid RAG Engine**: Combines vector and graph databases for optimal information retrieval
-5. **LLM-powered Chat Interface**: Processes user queries and generates natural responses
+5. **LangChain ReACT-powered Chat Interface**: Processes user queries and generates natural responses
+6. **LangFuse Traces & Docker**: Built-in observability and containerized deployment
+7. **FastAPI app on local** 
 
 ## Setup Instructions
 
@@ -199,6 +205,52 @@ I chose LangChain's ReAct agent framework instead of directly using the Hugging 
 - Efficient conversation history management
 - Ability to decompose complex queries into sub-problems
 
+### Observability & Tracing
+
+Each user interaction is instrumented using **LangFuse traces** to capture:
+- Request/response payloads
+- Latency and error metrics
+- Session-level context and tool invocations
+
+**Importance**:
+- **Debugging**: Rapid identification of failures in retrieval or generation
+- **Performance Monitoring**: Track response times and optimize bottlenecks
+- **Auditing**: Maintain a record of conversation flows for quality control
+
+**Implementation**:
+- Integrated LangFuse SDK in the backend service
+- Configured trace sampling per session
+- Visualized traces in LangFuse dashboard for end-to-end visibility
+
+
+### Containerization & Deployment
+
+The entire application is packaged in Docker for consistent and reproducible deployment.
+
+#### Dockerfile Overview
+- **Base Image**: Python 3.9-slim for backend and Node.js 18-alpine for frontend
+- **Multi-Stage Build**: Separate dependency installation, build, and runtime stages
+- **Health Checks**: Endpoint probes to ensure service readiness
+
+#### Build and Run Commands
+```bash
+# Build the Docker image
+docker build -t rah-chatbot:latest .
+
+# Run the container in detached mode
+docker run -d \
+  --name rah-chatbot \
+  --env-file .env \
+  -p 8000:8000 \
+  -p 3000:3000 \
+  rah-chatbot:latest
+
+# View container logs
+docker logs -f rah-chatbot
+```
+
+
+
 ## Challenges and Solutions
 
 ### Web Scraping Challenges
@@ -278,3 +330,37 @@ Several enhancements could further improve the system:
 - **Multi-language Support**: Extend capabilities to support queries in multiple languages
 
 
+## Docker Setup
+Prerequisites
+
+Docker and Docker Compose installed on your system
+
+Running with Docker
+bash# Clone the repository
+git clone https://github.com/yourusername/rah-chatbot.git
+cd rah-chatbot
+
+# Copy environment variables example and edit
+cp .env.example .env
+# Edit .env with your credentials and configuration
+
+# Build and start all containers
+docker-compose up --build
+
+# Or run specific components
+docker-compose up --build scraper
+docker-compose up --build knowledge-base
+docker-compose up --build chatbot-api
+docker-compose up --build ui
+Useful Docker Commands
+bash# View logs for specific service
+docker-compose logs -f chatbot-api
+
+# Restart a specific service
+docker-compose restart knowledge-base
+
+# Stop all services
+docker-compose down
+
+# Clean volumes for fresh start
+docker-compose down -v
