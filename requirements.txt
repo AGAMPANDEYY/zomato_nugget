@@ -24,9 +24,7 @@ weaviate-client
 neo4j
 #Retrieval 
 llama-index-vector-stores-weaviate
-llama-index
-llama-index-program-openai==0.3.0
-llama-index-multi-modal-llms-openai==0.4.2
+llama-index==0.12.32
 
 #LangChain Libraries
 langchain 
