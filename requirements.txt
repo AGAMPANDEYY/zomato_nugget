@@ -25,6 +25,8 @@ neo4j
 #Retrieval 
 llama-index-vector-stores-weaviate
 llama-index
+llama-index-program-openai==0.3.0
+llama-index-multi-modal-llms-openai==0.4.2
 
 #LangChain Libraries
 langchain 
