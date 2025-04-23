@@ -27,8 +27,6 @@ The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI sol
 
 ## System Architecture
 
-![System Architecture](https://placeholder-for-system-architecture-diagram.png)
-
 The RAH Chatbot system follows a modular architecture consisting of:
 
 1. **Web Crawling & Scraping Module**: Discovers and extracts restaurant data from websites
