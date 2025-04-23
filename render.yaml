@@ -1,0 +1,21 @@
+services:
+  - type: web_service
+    name: backend
+    env: python
+    buildCommand: "pip install --no-cache-dir -r requirements.txt"
+    startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: OPENAI_API_KEY
+      - key: WEAVIATE_URL
+      - key: WEAVIATE_API_KEY
+      - key: NEO4J_URI
+      - key: NEO4J_USER
+      - key: NEO4J_PASSWORD
+
+  - type: web_service
+    name: frontend
+    env: node
+    buildCommand: "yarn install --frozen-lockfile && yarn build"
+    startCommand: "yarn start"
+    envVars:
+      - key: NEXT_PUBLIC_API_URL

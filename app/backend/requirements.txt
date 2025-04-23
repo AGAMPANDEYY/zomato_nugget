@@ -1,0 +1,45 @@
+fastapi==0.95.1
+uvicorn[standard]==0.22.0
+python-dotenv==1.0.0
+
+# Crawling and Scraping Libraries
+scrapy
+beautifulsoup4
+requests
+selenium
+PyYAML
+pytest
+crawl4ai
+scrapy-rotating-proxies
+scrapegraphai
+scrapegraph-py
+
+#scarpped data cleaining
+google-generativeai
+
+# Data Processing Libraries
+pyiceberg[s3fs,hive]
+pyarrow
+pyiceberg[sql-sqlite,pyarrow]
+
+
+#RAG 
+weaviate-client
+neo4j
+#Retrieval 
+llama-index-vector-stores-weaviate
+llama-index
+
+#LangChain Libraries
+langchain 
+langgraph 
+tavily-python
+huggingface-hub 
+transformers
+langchain-huggingface
+llama-index-callbacks-langfuse
+
+#langchain tools
+google-search-results
+
+blobfile
