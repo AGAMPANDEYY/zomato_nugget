@@ -248,6 +248,8 @@ The hybrid RAG system addresses different types of user queries:
 
 The chatbot implementation uses LangChain ReAct agent with session-based memory:
 
+<img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/chatinterface.png">
+
 - **LLM Model**: TinyLlama/TinyLlama-1.1B-Chat-v1.0 from Hugging Face Hub
 - **Conversation Management**: Implemented using `RunnableWithMessageHistory` from LangChain
 - **Context Integration**: Combines vector and graph database results for comprehensive responses
