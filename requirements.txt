@@ -39,3 +39,4 @@ llama-index-callbacks-langfuse
 google-search-results
 
 blobfile
+fastapi
