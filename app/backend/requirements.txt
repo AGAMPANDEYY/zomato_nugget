@@ -1,5 +1,5 @@
-fastapi==0.95.1
-uvicorn[standard]==0.22.0
+fastapi
+uvicorn[standard]
 # Crawling and Scraping Libraries
 scrapy
 beautifulsoup4
