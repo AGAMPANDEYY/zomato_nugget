@@ -1,16 +1,21 @@
 {
-    "name": "zomato-rag-frontend",
-    "private": true,
-    "scripts": {
-      "dev": "next dev",
-      "build": "next build",
-      "start": "next start"
-    },
-    "dependencies": {
-      "next": "13.5.1",
-      "react": "18.2.0",
-      "react-dom": "18.2.0",
-      "lucide-react": "^0.259.0",
-      "axios": "^1.4.0"
-    }
+  "name": "zomato-rag-frontend",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "13.5.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "axios": "^1.4.0",
+    "lucide-react": "^0.259.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.21",
+    "autoprefixer": "^10.4.14"
   }
+}
