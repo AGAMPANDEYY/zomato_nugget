@@ -170,6 +170,7 @@ The scraping system captured:
 
 ### Data Lake Integration (MongoDB Atlas)
 
+<img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/datalake.png">
 Instead of directly building the RAG database, I implemented a data lake approach as an intermediate step:
 
 #### Why Use a Data Lake?
