@@ -6,6 +6,7 @@ The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI sol
 
 ## Table of Contents
 - [System Architecture](#system-architecture)
+- [Setup Instructions](#setup-instructions)
 - [Implementation Details](#implementation-details)
   - [Web Scraping Module](#web-scraping-module)
   - [Data Lake Integration](#data-lake-integration)
@@ -17,7 +18,6 @@ The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI sol
 - [Example Queries](#example-queries)
 - [Limitations](#limitations)
 - [Future Improvements](#future-improvements)
-- [Setup Instructions](#setup-instructions)
 
 ## System Architecture
 
@@ -30,6 +30,55 @@ The RAH Chatbot system follows a modular architecture consisting of:
 3. **Knowledge Base Module**: Processes and indexes data for efficient retrieval
 4. **Hybrid RAG Engine**: Combines vector and graph databases for optimal information retrieval
 5. **LLM-powered Chat Interface**: Processes user queries and generates natural responses
+
+## Setup Instructions
+
+### Prerequisites
+- Python 3.8+
+- MongoDB Atlas account
+- Neo4j account (free tier available)
+- Weaviate instance
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/rah-chatbot.git
+cd rah-chatbot
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your MongoDB, Neo4j, and Weaviate credentials
+```
+
+### Running the System
+
+```bash
+# Run the web scraper
+python src/scraper/main.py
+
+# Process data and build knowledge base
+python src/knowledge_base/build.py
+
+# Start the chatbot interface
+python src/chatbot/app.py
+```
+
+For a detailed explanation of each component, please refer to the individual module documentation in the `/docs` directory.
+
+## Demo
+
+[Watch Demo Video](link-to-your-demo-video)
+
+![Screenshot of RAH Chatbot in action](placeholder-for-screenshot.png)
+
 
 ## Implementation Details
 
@@ -85,15 +134,23 @@ Instead of directly building the RAG database, I implemented a data lake approac
 The knowledge base creation involved sophisticated chunking strategies to optimize information retrieval:
 
 #### Chunking Methods Implemented:
-1. **Semantic Chunking**: Divides menu content based on semantic meaning and context
-2. **LLM-Guided Chunking**: Utilizes LLM to intelligently segment content for optimal retrieval
-3. **Hierarchical Chunking**: Creates nested chunks reflecting the hierarchical structure of menus
-4. **Multimodal Chunking**: Generates text from scraped images/screenshots and integrates with text data
-5. **Entropy-Based Chunking**: Splits content based on information density
-6. **Graph-Based Chunking**: Builds relationship graphs between menu items and categories
-7. **Attribute-Based Chunking**: Organizes chunks based on specific attributes like dietary restrictions
+**Chunking Strategies**:
+| Method         | Description                                        | Use Case Example                                |
+|---------------|----------------------------------------------------|------------------------------------------------|
+| Semantic      | Embedding-based text splits                         | "Show me vegan dishes"                        |
+| LLM‑Guided    | Model‑driven logical segmentation                    | "List gluten‑free appetizers"                 |
+| Hierarchical  | Reflects menu category hierarchy                     | "Starters > Soups > Tomato"                   |
+| Multimodal    | Text from images/screenshots                         | "What’s on the lunch menu image?"             |
+| Entropy‑Based | Splits by information density to balance chunk size  | "Summarize chef’s notes"                      |
+| Graph‑Based   | Nodes and edges between restaurants, menus, items    | "Compare spice levels across menus"           |
+| Attribute‑Based | Tags by price, allergens, etc.                    | "Filter dishes under ₹500"                    |
+
 
 Each chunk was stored as a dictionary with text content and associated metadata for efficient retrieval.
+
+**Storage**:
+- **Weaviate**: Vector embeddings with metadata filtering
+- **Neo4j**: Entity‑relationship graph for structured queries
 
 ### RAG Implementation
 
@@ -114,6 +171,18 @@ The hybrid RAG system addresses different types of user queries:
 - Vector search excels at semantic understanding (e.g., "spicy dishes with chicken")
 - Graph database handles relationship queries (e.g., "compare dessert options between restaurants")
 - Combined approach provides more comprehensive and accurate responses
+
+
+### RAG Engine
+
+1. **Retrieval**:
+   - **Weaviate**: k‑nearest neighbor on text embeddings with BM25 fallback
+   - **Neo4j**: Cypher queries for relationship context
+2. **Reranking**:
+   - **Hugging Face**: `jinaai/jina-reranker-v2-base-multilingual`
+3. **Generation**:
+   - **TinyLlama/TinyLlama-1.1B-Chat-v1.0** for on‑edge, low‑latency inference
+
 
 ### Chatbot Interface
 
@@ -167,6 +236,7 @@ The combination of vector-based and graph-based retrieval provides more comprehe
 ### Multimodal Data Integration
 By extracting text from menu images and screenshots, the system incorporates information that would be missed by traditional text-only scraping, particularly for restaurants that present menus as images or have visually distinctive menu sections.
 
+
 ## Example Queries
 
 The system effectively handles a wide range of restaurant-related queries:
@@ -207,50 +277,4 @@ Several enhancements could further improve the system:
 - **User Feedback Loop**: Incorporate user feedback to improve retrieval and response quality
 - **Multi-language Support**: Extend capabilities to support queries in multiple languages
 
-## Setup Instructions
 
-### Prerequisites
-- Python 3.8+
-- MongoDB Atlas account
-- Neo4j account (free tier available)
-- Weaviate instance
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/rah-chatbot.git
-cd rah-chatbot
-
-# Create and activate virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your MongoDB, Neo4j, and Weaviate credentials
-```
-
-### Running the System
-
-```bash
-# Run the web scraper
-python src/scraper/main.py
-
-# Process data and build knowledge base
-python src/knowledge_base/build.py
-
-# Start the chatbot interface
-python src/chatbot/app.py
-```
-
-For a detailed explanation of each component, please refer to the individual module documentation in the `/docs` directory.
-
-## Demo
-
-[Watch Demo Video](link-to-your-demo-video)
-
-![Screenshot of RAH Chatbot in action](placeholder-for-screenshot.png)
