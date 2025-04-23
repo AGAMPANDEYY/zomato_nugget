@@ -10,7 +10,7 @@ from langchain_agent.llm.huggingface_llm import get_huggingface_llm, load_system
 from langchain.agents import create_tool_calling_agent
 
 class LangchainReactAgent:
-    def __init__(self):
+    def __init__(self, session_id):
         self.llm=get_huggingface_llm()
         self.messages=load_system_prompt()
         self.tools = [rag_retriever, dynamic_scrape] #graph_query
@@ -21,8 +21,8 @@ class LangchainReactAgent:
             ("human", "{input}"),
             ("placeholder", "{agent_scratchpad}"),
         ])
-
-        memory = InMemoryChatMessageHistory(session_id="test-session")
+        self.session_id=session_id
+        memory = InMemoryChatMessageHistory(session_id=self.session_id)
         agent = create_tool_calling_agent(self.llm, self.tools, prompt)
         agent_executor = AgentExecutor(agent=agent, tools=self.tools, verbose=True)
         self.agent_with_chat_history =RunnableWithMessageHistory(
@@ -31,9 +31,9 @@ class LangchainReactAgent:
             input_messages_key="input",
             history_messages_key="chat_history"
         )
-    def get_agent(self, session_id):
+    def get_agent(self):
         return self.agent_with_chat_history.with_config({
-            "configurable": {"session_id": session_id}
+            "configurable": {"session_id": self.session_id}
         })
 
 

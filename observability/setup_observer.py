@@ -2,15 +2,14 @@
 from langfuse.llama_index import LlamaIndexInstrumentor
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
-# Get keys for your project from the project settings page: https://cloud.langfuse.com
-os.environ["LANGFUSE_PUBLIC_KEY"] = "pk-lf-..."
-os.environ["LANGFUSE_SECRET_KEY"] = "sk-lf-..."
-os.environ["LANGFUSE_HOST"] = "https://cloud.langfuse.com"  # 🇪🇺 EU region
-# os.environ["LANGFUSE_HOST"] = "https://us.cloud.langfuse.com" # 🇺🇸 US region
+LANGFUSE_PUBLIC_KEY= os.getenv("LANGFUSE_PUBLIC_KEY")
+LANGFUSE_SECRET_KEY= os.getenv("LANGFUSE_SECRET_KEY")
 
 
 def setup_instrumentor():
-    instrumentor = LlamaIndexInstrumentor()
+    instrumentor = LlamaIndexInstrumentor(public_key=LANGFUSE_PUBLIC_KEY, secret_key=LANGFUSE_SECRET_KEY)
     instrumentor.start()
     return instrumentor
