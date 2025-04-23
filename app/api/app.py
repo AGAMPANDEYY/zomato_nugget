@@ -9,6 +9,16 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from pathlib import Path
 
+import json
+from observability.setup_observer import setup_instrumentor
+from retrieval.hybridrag import HybridRAG
+from utils.embeddings import create_embeddings
+from utils.query_processor import preprocess_query
+from langchain_agent.agents.agent_initializer import LangchainReactAgent
+from llama_index.core import global_handler
+import uuid
+ 
+
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -122,6 +132,46 @@ def generate_restaurant_response(query: str) -> str:
         return "Both restaurants offer similar spice levels. Spice Garden's Lamb Vindaloo is rated 'Very Hot', while Tandoor Palace's Lamb Rogan Josh is rated 'Hot'."
     return "I can help with restaurant info. Please ask about Happy Burger, Spice Garden, or Tandoor Palace."
 
+
+instrumentor = setup_instrumentor()
+
+def query_with_observability(agent, user_query: str,session_id,user_id):
+    with instrumentor.observe(trace_id=f"agent-{uuid.uuid4()}", session_id=session_id,
+                               user_id='user-id', metadata={"app_version": "1.0"}) as trace:
+        try:
+            # preprocessing step
+
+            processed_query, entities = preprocess_query(user_query)
+            print(f" Processed query is {processed_query}")
+     
+            # Get embeddings for processed query
+            query_embeddings = create_embeddings(processed_query)
+            hybrid_rag=HybridRAG()
+            # Retrieve with processed query and its embeddings
+            results = hybrid_rag.query_hybrid(processed_query, query_embeddings)
+            hybrid_rag.close()
+            response = agent.invoke({"input": user_query, "context": results})['output']
+            
+            trace.score(name="query_success", value=1.0)
+            trace.score(name="relevance", value=0.95)
+            trace.score(name="response_quality", value=0.88)
+            trace.update(user_id=user_id,session_id=session_id, input=user_query, ouput=response)
+
+            trace.update(metadata={
+                "session_id": session_id,
+                "original_query": user_query,
+                "processed_query": processed_query,
+                "entities": entities,
+                "agent_response": response
+            })
+            return response
+        
+        except Exception as e:
+            trace.score(name="query_error", value=0.0)
+            raise e
+        finally:
+            instrumentor.flush()
+
 # Pydantic models
 class ChatHistoryEntry(BaseModel):
     role: str
@@ -146,6 +196,13 @@ async def chat_endpoint(payload: ChatRequest):
     """Handle chat requests and return responses"""
     user_msg = payload.message
     history = payload.history or []
+    user_query = user_msg
+    session_id=str(uuid.uuid4())
+    user_id="agampandey"
+   
+    langchain_agent=LangchainReactAgent(session_id).get_agent()
+
+    response = query_with_observability(langchain_agent,user_query, session_id,user_id)
 
     logger.debug(f"Received message: {user_msg}")
     history.append(ChatHistoryEntry(role="user", content=user_msg))
@@ -153,7 +210,9 @@ async def chat_endpoint(payload: ChatRequest):
     answer = generate_restaurant_response(user_msg)
     history.append(ChatHistoryEntry(role="assistant", content=answer))
 
-    return ChatResponse(response=answer, history=history)
+    instrumentor.flush()
+
+    return response
 
 
 # For local development

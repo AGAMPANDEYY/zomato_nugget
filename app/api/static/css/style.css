@@ -98,6 +98,11 @@ body {
     scrollbar-color: var(--zomato-gray) var(--zomato-light);
 }
 
+/*Footer*/
+footer {
+    margin-bottom: 0.5rem; /* or 0 */
+}
+
 /* Example Queries Styles */
 .example-queries {
     max-width: 90%; /* Adjusted from 700px to be proportional */
@@ -118,7 +123,7 @@ body {
 
 /* Feature Categories Styles (inspired by image 2) */
 .feature-categories-fixed {
-    bottom: 0;
+    bottom: 50px;
     left: 0;
     width: 100%;
     z-index: 1000;
