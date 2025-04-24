@@ -10,6 +10,7 @@
 > - Multimodal Chunking uses `Salesforce/blip2-opt-2.7b` for generating caption of image. Better VLMs could be explored.
 > - Embedding layer switched from `BAAI/bge-m3`[1024x1] ---> `all-MiniLM-L6-v2` [384x1] for faster infernece.
 > - Reranker switched from HuggingFace `BAAI/bge-reranker-base` to open source [`FlashRank`](https://github.com/PrithivirajDamodaran/FlashRank).
+> - Tried cloud hosting on `vercel` , `render` and `AWS EC2` but a python package breaks "botocore" and "llama_index_openai..". Have pushed Dockerfile to EC2 but isn't hosted yet.
 
 
 <img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/systemdesign.png" >
