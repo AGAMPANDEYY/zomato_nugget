@@ -11,9 +11,10 @@
 > - Embedding layer switched from `BAAI/bge-m3`[1024x1] ---> `all-MiniLM-L6-v2` [384x1] for faster infernece.
 > - Reranker switched from HuggingFace `BAAI/bge-reranker-base` to open source [`FlashRank`](https://github.com/PrithivirajDamodaran/FlashRank).
 
-The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI solution that combines advanced web scraping techniques with a Retrieval Augmented Generation (RAG) system. This project enables users to ask natural language questions about restaurants and receive accurate, contextual responses based on up-to-date information scraped from restaurant websites.
 
 <img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/systemdesign.png" >
+
+The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI solution that combines advanced web scraping techniques with a Retrieval Augmented Generation (RAG) system. This project enables users to ask natural language questions about restaurants and receive accurate, contextual responses based on up-to-date information scraped from restaurant websites.
 
 ## Table of Contents
 1. [Overview](#overview)
