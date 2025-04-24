@@ -93,8 +93,14 @@ For a detailed explanation of each component, please refer to the individual mod
 
 [Watch Demo Video](link-to-your-demo-video)
 
-![Screenshot of RAH Chatbot in action](https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/chat_ss/chatfinal.png)
+![Screenshot of RAH Chatbot in action](https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/chat_ss/dessert_comparision_restaurants.png)
 
+> [!TIP]
+> User asked about best Vegetarian Restaurants so the RAH assitsant gave Sankalp Restaurant, On asking about Dessert Comparison it could list down foods available both in Sankalp Restaurant and Belgian waffle
+> Then based on the Customer's need of "chocolate cakeish things" RAH assistant suggested Belgian Waffle but with a Disclamer to also searc
+>
+> `The Belgian Waffle Co.'s chocolate waffles likely feature a blend of Belgian chocolate with high cocoa content`
+> `Remember, taste is personal, and what is "better" is ultimately up to your individual tastes and experience` -- A caution at the end.
 
 ## Implementation Details
 
