@@ -377,6 +377,11 @@ By extracting text from menu images and screenshots, the system incorporates inf
 
 The system effectively handles a wide range of restaurant-related queries:
 
+<img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/chat_ss/does_glutenfree.png">
+
+> [!TIP]
+> User asked about feature "Glute-Free" momos from WoW Momos! 
+
 | **Category**                  | **Example Queries**                                                                 |
 |------------------------------|-------------------------------------------------------------------------------------|
 | **Menu Availability Queries** | - "Does Bella Italia have any gluten-free pasta options?"  <br> - "What vegetarian appetizers does Golden Dragon offer?" |
