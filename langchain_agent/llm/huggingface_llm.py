@@ -9,7 +9,8 @@ load_dotenv()
 
 def get_huggingface_llm():
     llm= HuggingFaceEndpoint(
-        repo_id="TinyLlama/TinyLlama-1.1B-Chat-v1.0", #"bitext/Mistral-7B-Restaurants", 
+        repo_id="ethzanalytics/distilgpt2-tiny-conversational",#"TinyLlama/TinyLlama-1.1B-Chat-v1.0", #"bitext/Mistral-7B-Restaurants", 
+        task="text-generation",
         temperature= 0.3, 
         huggingfacehub_api_token=os.getenv("HUGGINGFACE_API_KEY")
     )

@@ -21,6 +21,7 @@ from dotenv import load_dotenv
 from sentence_transformers import CrossEncoder
 from llama_index.core import VectorStoreIndex
 from llama_index.vector_stores.weaviate import WeaviateVectorStore
+from flashrank import Ranker, RerankRequest
 
 load_dotenv()
 
@@ -42,7 +43,7 @@ class HybridRAG:
         # --------------------- WEAVIATE CONNECTION & LlamaIndex Setup ----------------------
 
             # -------------------- HYBRID QUERY PIPELINE + ReRank--------------------
-    def query_hybrid(self, user_query, user_query_embedding, limit=3, rerank_limit=10):
+    def query_hybrid(self, user_query, user_query_embedding, limit=3, rerank_limit=10, reranker=None):
         """
         Proper Hybrid Search: Uses Weaviate's hybrid search combining vector similarity and BM25 keyword matching with the provided embedding.
         Robust Reranking:
@@ -107,26 +108,31 @@ class HybridRAG:
         # Step 2: Rerank the results using the cross-encoder
         if len(initial_results) > 0:
             try:
-                from transformers import AutoModelForSequenceClassification
+                if reranker is None:
+                    from transformers import AutoModelForSequenceClassification
 
-                reranker = AutoModelForSequenceClassification.from_pretrained(
-                        'jinaai/jina-reranker-v2-base-multilingual',
-                        torch_dtype="auto",
-                        trust_remote_code=True,
-                    )
-                
+                    reranker = AutoModelForSequenceClassification.from_pretrained(
+                            'BAAI/bge-reranker-base',
+                            torch_dtype="auto",
+                            trust_remote_code=True,
+                        )
+        
                 # Prepare pairs for reranking
                 pairs = [(user_query, result["text"]) for result in initial_results]
                 
                 # Get reranking scores
-                rerank_scores = reranker.compute_score(pairs)
+                rerankrequest = RerankRequest(query=user_query, passages=initial_results)
+                rerank_scores = reranker.rerank(rerankrequest)
+                #rerank_scores = reranker.compute_score(pairs)
                 
                 # Add reranking scores to results
                 for i, score in enumerate(rerank_scores):
-                    initial_results[i]["rerank_score"] = float(score)
+                    #initial_results[i]["rerank_score"] = float(score) ---> For huggingfacehub rerankers
+                    score=score.get("score")
+                    initial_results[i]["score"] = float(score)  # Assuming the first score is the relevant one
                 
                 # Sort by reranking score
-                initial_results = sorted(initial_results, key=lambda x: x["rerank_score"], reverse=True)
+                initial_results = sorted(initial_results, key=lambda x: x["score"], reverse=True)
                 
             except ImportError:
                 print("Cross-encoder not available. Using original ranking.")

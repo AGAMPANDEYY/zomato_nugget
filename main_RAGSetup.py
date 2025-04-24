@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 
 from crawler_scraper.run_crawler_scraper import crawler_scraper_main
 from ingestion.datalake import DataLake  # adjust based on your ingestion module's function
-from retrieval.hybrid_retriever import *
+from retrieval.hybridrag import *
 
 load_dotenv()
 # Load environment variables from .env file

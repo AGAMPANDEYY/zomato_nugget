@@ -18,7 +18,19 @@ from langchain_agent.agents.agent_initializer import LangchainReactAgent
 from llama_index.core import global_handler
 import uuid
 from fastapi.middleware.cors import CORSMiddleware
+from transformers import AutoModelForSequenceClassification
+from langchain_huggingface import HuggingFaceEmbeddings
+from sentence_transformers import SentenceTransformer
+from huggingface_hub import InferenceClient
+from flashrank import Ranker, RerankRequest
+import torch
+from bs4 import BeautifulSoup
+import re
+import os 
 
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.DEBUG)
@@ -45,10 +57,39 @@ app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 # Set up Jinja2 templates
 templates = Jinja2Templates(directory=BASE_DIR / "templates")
 
+def clean_html(text: str) -> str:
+    """Strip HTML/JS/CSS and collapse whitespace."""
+    # remove scripts/styles
+    soup = BeautifulSoup(text, "html.parser")
+    for tag in soup(["script", "style"]):
+        tag.decompose()
+    cleaned = soup.get_text(separator=" ", strip=True)
+    # collapse any long run of whitespace/newlines into single spaces
+    cleaned = re.sub(r"\s+", " ", cleaned)
+    return cleaned
+
+def refine_rag_results(raw_results, max_chars=300):
+    """
+    1. Clean each raw HTML/text block
+    2. Dedupe identical snippets
+    3. Truncate to max_chars with an ellipsis
+    """
+    seen = set()
+    refined = []
+    for item in raw_results:
+        text = clean_html(item)
+        if not text or text in seen:
+            continue
+        seen.add(text)
+        if len(text) > max_chars:
+            text = text[: max_chars].rsplit(" ", 1)[0] + "…"
+        refined.append(text)
+    return refined
+
 
 instrumentor = setup_instrumentor()
 
-def query_with_observability(agent, user_query: str,session_id,user_id):
+def query_with_observability(agent, user_query: str,session_id,user_id, reranker, embed_model):
     with instrumentor.observe(trace_id=f"agent-{uuid.uuid4()}", session_id=session_id,
                                user_id='user-id', metadata={"app_version": "1.0"}) as trace:
         try:
@@ -58,14 +99,33 @@ def query_with_observability(agent, user_query: str,session_id,user_id):
             print(f" Processed query is {processed_query}")
      
             # Get embeddings for processed query
-            query_embeddings = create_embeddings(processed_query)
+            #query_embeddings = create_embeddings(processed_query)
+            #query_embeddings = embed_model.embed_query(user_query)
+            query_embeddings = embed_model.encode(processed_query)
+
             hybrid_rag=HybridRAG()
             # Retrieve with processed query and its embeddings
-            results = hybrid_rag.query_hybrid(processed_query, query_embeddings)
+            results = hybrid_rag.query_hybrid(processed_query, query_embeddings, reranker= reranker, limit=5)
             print("Hybrid RAG Results:\n", results)
 
             hybrid_rag.close()
-            response = agent.invoke({"input": user_query, "context": results})['output']
+
+            raw_results = results  # your list of long HTML/text strings
+            snippets = refine_rag_results(raw_results, max_chars=200) 
+
+            # stringify the top-k passages into a context block
+            context_block = "\n".join(f"{i+1}. {s}" for i, s in enumerate(snippets))
+            # build one prompt that includes both RAG context and the question
+            full_input = (
+                f"Relevant passages to go through it and answer the user query after this below:\n{context_block}\n\n"
+                f"User question:\n{user_query}"
+            )
+
+            # send it as the single "input"
+            response = agent.invoke({"input": full_input})["output"]
+
+            print("Agent Response:\n", response)
+
             
             trace.score(name="query_success", value=1.0)
             trace.score(name="relevance", value=0.95)
@@ -100,6 +160,46 @@ class ChatResponse(BaseModel):
     response: str
     history: List[ChatHistoryEntry]
 
+
+langchain_agent = None
+reranker = None
+embed_model = None
+
+@app.on_event("startup")
+def load_model():
+    session_id=str(uuid.uuid4())
+    user_id="agampandey"
+    global langchain_agent
+    # Initialize the Langchain agent with a unique session ID
+    langchain_agent=LangchainReactAgent(session_id).get_agent()
+    global reranker
+    """
+    Due to the CPU and app load limitation and slow process
+    we are now using FlashRank lightweight pairwise reranker
+
+    # Load the reranker model
+    reranker = AutoModelForSequenceClassification.from_pretrained(
+            'BAAI/bge-reranker-base',
+            torch_dtype=torch.float16,
+            device_map="auto", 
+            trust_remote_code=True,
+        )
+    """
+  
+    reranker = Ranker(max_length=128)
+  
+    global embed_model
+    HF_TOKEN= os.getenv("HUGGINGFACE_API_KEY")
+
+    """
+    client = InferenceClient(token=HF_TOKEN)
+
+    embed_model = HuggingFaceEmbeddings(
+            model_name="BAAI/bge-m3")
+    """
+    embed_model = SentenceTransformer("all-MiniLM-L6-v2", device="cpu")  # 80MB model
+    
+
 # Routes
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
@@ -116,10 +216,10 @@ async def chat_endpoint(payload: ChatRequest):
     user_query = user_msg
     session_id=str(uuid.uuid4())
     user_id="agampandey"
-   
-    langchain_agent=LangchainReactAgent(session_id).get_agent()
-
-    response = query_with_observability(langchain_agent,user_query, session_id,user_id)
+    global langchain_agent
+    global reranker
+    global embed_model
+    response = query_with_observability(langchain_agent,user_query, session_id,user_id, reranker, embed_model)
 
     logger.debug(f"Received message: {user_msg}")
     history.append(ChatHistoryEntry(role="user", content=user_msg))
