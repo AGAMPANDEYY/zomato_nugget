@@ -196,6 +196,8 @@ class HybridRAG:
         
         # Step 4: Extract just the text for final results
         final_context = [result["text"] for result in enriched_results[:limit]]
+        final_context= [initial_results[i]["text"] for i in range(len(initial_results))]
+        print("final_context", final_context)
     
         return final_context
     

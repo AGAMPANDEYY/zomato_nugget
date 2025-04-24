@@ -44,3 +44,5 @@ uvicorn
 flask
 accelerate
 flashrank
+
+crewai

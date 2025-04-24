@@ -1,9 +1,6 @@
 # Base image
-FROM python:3.10-slim
+FROM python:3.13-slim
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
 
 # Set working directory
 WORKDIR /app

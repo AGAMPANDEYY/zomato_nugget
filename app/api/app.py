@@ -29,6 +29,10 @@ import re
 import os 
 
 from dotenv import load_dotenv
+from langchain_agent.llm.huggingface_llm import get_huggingface_llm, load_system_prompt
+from langchain_core.messages import HumanMessage
+from langchain_core.messages import AIMessage
+
 
 load_dotenv()
 
@@ -89,7 +93,7 @@ def refine_rag_results(raw_results, max_chars=300):
 
 instrumentor = setup_instrumentor()
 
-def query_with_observability(agent, user_query: str,session_id,user_id, reranker, embed_model):
+def query_with_observability(agent_executor, user_query: str,session_id,user_id, reranker, embed_model):
     with instrumentor.observe(trace_id=f"agent-{uuid.uuid4()}", session_id=session_id,
                                user_id='user-id', metadata={"app_version": "1.0"}) as trace:
         try:
@@ -116,30 +120,48 @@ def query_with_observability(agent, user_query: str,session_id,user_id, reranker
             # stringify the top-k passages into a context block
             context_block = "\n".join(f"{i+1}. {s}" for i, s in enumerate(snippets))
             # build one prompt that includes both RAG context and the question
+            system_prompt=load_system_prompt()[0]["content"]
             full_input = (
+                #f"{system_prompt}"
                 f"Relevant passages to go through it and answer the user query after this below:\n{context_block}\n\n"
                 f"User question:\n{user_query}"
+                
             )
 
-            # send it as the single "input"
-            response = agent.invoke({"input": full_input})["output"]
+            config= {"configurable": {"thread_id": session_id}}
 
-            print("Agent Response:\n", response)
+            response=[]
+            total_tokens=0
+            input_tokens=0
+            output_tokens=0
+    
+            for step in agent_executor.stream({"messages": [HumanMessage(content=full_input)]}, config, stream_mode="values"):      
+                
+                for msg in step["messages"]:
+                    response.append(msg.content)
 
+                    if "usage_metadata" in msg:
+                        total_tokens = msg["usage_metadata"].get("total_tokens", 0)
+                        input_tokens = msg["usage_metadata"].get("input_tokens", 0)
+                        output_tokens = msg["usage_metadata"].get("output_tokens", 0)
             
+            # Combine the partial responses
+            final_response = "".join(response[-1])    
+
+
             trace.score(name="query_success", value=1.0)
             trace.score(name="relevance", value=0.95)
             trace.score(name="response_quality", value=0.88)
-            trace.update(user_id=user_id,session_id=session_id, input=user_query, ouput=response)
-
+            trace.update(user_id=user_id,session_id=session_id, input=user_query, output=final_response,tokens=total_tokens) 
+             
             trace.update(metadata={
                 "session_id": session_id,
                 "original_query": user_query,
                 "processed_query": processed_query,
                 "entities": entities,
-                "agent_response": response
+                "agent_response": final_response
             })
-            return response
+            return final_response
         
         except Exception as e:
             trace.score(name="query_error", value=0.0)
@@ -220,7 +242,7 @@ async def chat_endpoint(payload: ChatRequest):
     global reranker
     global embed_model
     response = query_with_observability(langchain_agent,user_query, session_id,user_id, reranker, embed_model)
-
+    
     logger.debug(f"Received message: {user_msg}")
     history.append(ChatHistoryEntry(role="user", content=user_msg))
 

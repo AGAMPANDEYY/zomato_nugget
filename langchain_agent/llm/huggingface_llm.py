@@ -7,16 +7,19 @@ import yaml
 
 load_dotenv()
 
+
 def get_huggingface_llm():
     llm= HuggingFaceEndpoint(
-        repo_id="ethzanalytics/distilgpt2-tiny-conversational",#"TinyLlama/TinyLlama-1.1B-Chat-v1.0", #"bitext/Mistral-7B-Restaurants", 
-        task="text-generation",
-        temperature= 0.3, 
-        huggingfacehub_api_token=os.getenv("HUGGINGFACE_API_KEY")
+        repo_id="microsoft/Phi-3-mini-4k-instruct",
+        task="chat-completion",
+        max_new_tokens=512,
+        do_sample=False,
+        repetition_penalty=1.03,
+        huggingfacehub_api_token=os.getenv("HUGGINGFACE_API_KEY"),
     )
-    return  ChatHuggingFace(llm=llm)
+    return  ChatHuggingFace(llm=llm, verbose=True)
 
 def load_system_prompt():
     prompt_path = os.path.join(os.path.dirname(__file__), "..","prompts", "system_prompt.yaml")
-    with open(prompt_path, "r") as f:
+    with open(prompt_path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
