@@ -12,8 +12,10 @@
 > - Reranker switched from HuggingFace `BAAI/bge-reranker-base` to open source [`FlashRank`](https://github.com/PrithivirajDamodaran/FlashRank).
 > - Tried cloud hosting on `vercel` , `render` and `AWS EC2` but a python package breaks "botocore" and "llama_index_openai..". Have pushed Dockerfile to EC2 but isn't hosted yet.
 
+[Watch Demo Video](https://www.loom.com/share/5b41725aca084deeb62912e4daecd395?sid=59657db6-f8bf-45c1-8b43-73fff017f9b7)
 
 <img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/systemdesign.png" >
+
 
 The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI solution that combines advanced web scraping techniques with a Retrieval Augmented Generation (RAG) system. This project enables users to ask natural language questions about restaurants and receive accurate, contextual responses based on up-to-date information scraped from restaurant websites.
 
@@ -91,8 +93,6 @@ python src/chatbot/app.py
 For a detailed explanation of each component, please refer to the individual module documentation in the `/docs` directory.
 
 ## Demo
-
-[Watch Demo Video](link-to-your-demo-video)
 
 ![Screenshot of RAH Chatbot in action](https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/chat_ss/dessert_comparision_restaurants.png)
 
