@@ -1,10 +1,20 @@
 # Restaurant Assistant Hybrid (RAH) Chatbot: HybridRAG: inspired by https://arxiv.org/html/2408.04948v1
 
-## Overview
+> [!IMPORTANT]
+> Models of less precsion and accuracy were also used due to compute limitations.
+> 
+> - Scraped data quality and limited Indian maintined restaurant websites. Dish details extracted from Menu Images depends on VLM's accuracy. 
+> - 384 dimension Embeddings to Weviate VectorDB.
+> - LLM-Guided chunking with `gpt2` HuggingFace pipeline.
+> - Graph chunking and GraphDB is only mapping relations `restaurant` --> `dish` for now.
+> - Multimodal Chunking uses `Salesforce/blip2-opt-2.7b` for generating caption of image. Better VLMs could be explored.
+> - Embedding layer switched from `BAAI/bge-m3`[1024x1] ---> `all-MiniLM-L6-v2` [384x1] for faster infernece.
+> - Reranker switched from HuggingFace `BAAI/bge-reranker-base` to open source [`FlashRank`](https://github.com/PrithivirajDamodaran/FlashRank).
 
-The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI solution that combines advanced web scraping techniques with a Retrieval Augmented Generation (RAG) system. This project enables users to ask natural language questions about restaurants and receive accurate, contextual responses based on up-to-date information scraped from restaurant websites.
 
 <img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/systemdesign.png" >
+
+The Restaurant Assistant Hybrid (RAH) Chatbot is an end-to-end Generative AI solution that combines advanced web scraping techniques with a Retrieval Augmented Generation (RAG) system. This project enables users to ask natural language questions about restaurants and receive accurate, contextual responses based on up-to-date information scraped from restaurant websites.
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -207,6 +217,15 @@ Each chunk was stored as a dictionary with text content and associated metadata 
 **Storage**:
 - **Weaviate**: Vector embeddings with metadata filtering
 - **Neo4j**: Entity‑relationship graph for structured queries
+
+#### Problem faced with Embedding models:
+
+1. Initially `BAAI/bge-m3` model was used which produces vector size of 1024 dimensions
+2. These vectors were pushed to Weviate VectorDB but on query generation and retrieval this lead to a computaion bottleneck on small scale deployment with NO `GPUs`
+3. At the end, model from [LucidWorks](https://doc.lucidworks.com/lw-platform/ai/3vqfxe/pre-trained-embedding-models) was used, [`all-minilm-l6-v2`](https://doc.lucidworks.com/lw-platform/ai/3vqfxe/pre-trained-embedding-models#all-minilm-l6-v2) which is most lightweight and produces embeddings of 384 dimensions.
+
+> [!NOTE]
+> The all-minilm-l6-v2 model contains 6 layers. It is the fastest model, but also provides the lowest quality. It is smaller than any of the other provided models, including the E5, GTE and BGE small models. Therefore, it provides lower quality but faster performance. 
 
 <img src="https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/neo4j.png">
 
