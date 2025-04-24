@@ -93,7 +93,7 @@ For a detailed explanation of each component, please refer to the individual mod
 
 [Watch Demo Video](link-to-your-demo-video)
 
-![Screenshot of RAH Chatbot in action](placeholder-for-screenshot.png)
+![Screenshot of RAH Chatbot in action](https://github.com/AGAMPANDEYY/zomato_nugget/blob/main/media/chat_ss/chatfinal.png)
 
 
 ## Implementation Details
