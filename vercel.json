@@ -11,6 +11,6 @@
         "dest": "app/api/app.py"
       }
     ],
-    "installCommand": "pip install llama-index==0.12.32 && pip install -r requirements.txt"
+    "installCommand": "pip install llama-index  && pip install -r requirements_vercel.txt"
   }
   

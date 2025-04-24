@@ -1,0 +1,21 @@
+blobfile
+fastapi
+uvicorn
+flask
+accelerate
+
+#langchain tools
+google-search-results
+
+#LangChain Libraries
+langchain 
+langgraph 
+tavily-python
+huggingface-hub 
+transformers
+langchain-huggingface
+
+
+#RAG 
+weaviate-client
+neo4j
