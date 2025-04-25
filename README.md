@@ -60,7 +60,7 @@ The RAH Chatbot system follows a modular architecture consisting of:
 
 ### Installation
 
-```bash
+```python
 # Clone the repository
 git clone https://github.com/yourusername/rah-chatbot.git
 cd zomato-nugget
@@ -79,7 +79,7 @@ cp .env.example .env
 
 ### Running the System
 
-```bash
+```python
 # Run the web crawler from seed_urls.json
 python ./main_crawl/main.py
 
