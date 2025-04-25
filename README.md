@@ -1,4 +1,4 @@
-# Restaurant Assistant Hybrid (RAH) Chatbot: HybridRAG: inspired by https://arxiv.org/html/2408.04948v1
+# Restaurant Assistant Hybrid (RAH) Chat: HybridRAG: inspired by https://arxiv.org/html/2408.04948v1
 
 > [!IMPORTANT]
 > Models of less precsion and accuracy were also used due to compute limitations.
@@ -60,6 +60,9 @@ The RAH Chatbot system follows a modular architecture consisting of:
 
 ### Installation
 
+> [!NOTE]
+> Project was built on Python 3.13.2
+
 ```python
 # Clone the repository
 git clone https://github.com/yourusername/rah-chatbot.git
@@ -81,10 +84,10 @@ cp .env.example .env
 
 ```python
 # Run the web crawler from seed_urls.json
-python ./main_crawl/main.py
+python main_crawl.py
 
 #Scrapes crawled_url.json and pushes to MongoDB Atlas collection
-python ./main_scrapingest/main.py
+python main_scrapingest.py
 
 # Process data and build knowledge base
 python ./knowledge_base/build_knowledgebase.py
