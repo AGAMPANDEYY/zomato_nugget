@@ -46,7 +46,7 @@ The RAH Chatbot system follows a modular architecture consisting of:
 2. **Data Lake Storage**: Stores raw processed data in structured format
 3. **Knowledge Base Module**: Processes and indexes data for efficient retrieval
 4. **Hybrid RAG Engine**: Combines vector and graph databases for optimal information retrieval
-5. **LangChain ReACT-powered Chat Interface**: Processes user queries and generates natural responses
+5. **LangChain ReACT-powered MemoryChat Interface**: Processes user queries and generates natural responses
 6. **LangFuse Traces & Docker**: Built-in observability and containerized deployment
 7. **FastAPI app on local** 
 
@@ -63,7 +63,7 @@ The RAH Chatbot system follows a modular architecture consisting of:
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/rah-chatbot.git
-cd rah-chatbot
+cd zomato-nugget
 
 # Create and activate virtual environment
 python -m venv venv
@@ -80,14 +80,17 @@ cp .env.example .env
 ### Running the System
 
 ```bash
-# Run the web scraper
-python src/scraper/main.py
+# Run the web crawler from seed_urls.json
+python ./main_crawl/main.py
+
+#Scrapes crawled_url.json and pushes to MongoDB Atlas collection
+python ./main_scrapingest/main.py
 
 # Process data and build knowledge base
-python src/knowledge_base/build.py
+python ./knowledge_base/build_knowledgebase.py
 
 # Start the chatbot interface
-python src/chatbot/app.py
+python main_chat.py
 ```
 
 For a detailed explanation of each component, please refer to the individual module documentation in the `/docs` directory.
