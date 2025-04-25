@@ -3,7 +3,8 @@
 > [!IMPORTANT]
 > Models of less precsion and accuracy were also used due to compute limitations.
 > 
-> - Scraped data quality and limited Indian maintined restaurant websites. Dish details extracted from Menu Images depends on VLM's accuracy. 
+> - Scraped data quality (attributes and consistency across Indian websites since mostly aren't maintained) and limited Indian maintined restaurant websites. Dish details extracted from Menu Images depends on VLM's accuracy. 
+> - Zomato, Swiggy and other detailed webpages didn't allow scrapers. (Code follows 'robots.txt' and Rotating proxies+ user_agents)
 > - 384 dimension Embeddings to Weviate VectorDB.
 > - LLM-Guided chunking with `gpt2` HuggingFace pipeline.
 > - Graph chunking and GraphDB is only mapping relations `restaurant` --> `dish` for now.
